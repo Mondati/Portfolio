@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <div id="seleccionTema" class="miVentanaEmergente">
+            <h3 class="tituloTema">Seleccione un tema</h3>
+            <ul id="menuTema" class="listaTema">
+                <li class="listaItemTema">
+                    <button id="but" class="botonListaTema" type="button" data-theme="default">
+                        <span class="nombreTema">nombre tema</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="light">
+                        <span class="nombreTema">nombre tema</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="choco">
+                        <span class="nombreTema">nombre tema</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="dark">
+                        <span class="nombreTema">nombre tema</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="bowser">
+                        <span class="nombreTema">nombre tema</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <nav class="navHeader">
+            <div class="logo"><img src="./assets/images/android-chrome-192x192.png" alt="logo"></div>
+            <div class="navMenu ">
+                <ol>
+                    <li class="sobreMi">Sobre mí</li>
+                    <li class="proyectos">Proyectos</li>
+                    <li class="contacto">Contacto</li>
+                </ol>
+            </div>
+            <div class="iconosPrincipales">
+            <div class="iconoTema">
+                <i id="miIcono" class="fa-sharp fa-solid fa-brush"></i>
+            </div>
+            <div class="barsMenu" aria-label="Abrir menú">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+        </div>
+        </nav>
+        <div class="menuContainer">
+            <div class="menu">
+                <ul>
+                    <div class="containerLink">
+                        <span class="numVentana">01.</span>
+                        <li><a class="navLink" href="#sectionSM">Sobre mí</a></li>
+                    </div>
+                    <div class="containerLink">
+                        <span class="numVentana">02.</span>
+                        <li><a class="navLink" href="#">Proyectos</a></li>
+                    </div>
+                    <div class="containerLink">
+                        <span class="numVentana">03.</span>
+                        <li><a class="navLink" href="#">Experiencia</a></li>
+                    </div>
+                    <div class="containerLink">
+                        <span class="numVentana">04.</span>
+                        <li><a class="navLink" href="#">Contacto</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!----------------------- SECCIÓN PRESENTACIÓN-------------------->
+        <section class="hero">
+            <h1 id="h1">Hola, mi nombre es</h1>
+            <h2 class="nombre">Sergio Agustín Mondati</h2>
+            <h3 class="ocupacion">Developer</h3>
+            <p class="descripcion">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
+                fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum architecto a
+                nobis enim natus placeat!
+            </p>
+            <div class="cv">
+                <a href="rutaadescargarcv">
+                    <button> Descargar CV</button>
+                </a>
+            </div>
+        </section>
+        <!----------------------- SECCIÓN SOBRE MI-------------------->
+        <section id="sectionSM" class="sectionSobreMi">
+            <h2 class="numeroDeCabecera">
+                Sobre Mí
+            </h2>
+            <div class="divSobreMi">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero tempora dolorem vitae saepe at
+                    cupiditate voluptatum pariatur voluptas, cum soluta, eius doloribus nostrum culpa maiores molestiae!
+                    Ratione quia consequuntur ipsa?</p>
+                <p>Tecnologías que he usado recientemente</p>
+                <ul class="habilidades">
+                    <li>Html 5</li>
+                    <li>Css 3</li>
+                    <li>JavaScrip</li>
+                    <li>React</li>
+                    <li>Java</li>
+                    <li>MySql</li>
+                </ul>
+            </div>
+            <div>
+                <!-- <img src="./assets/images/imgPerfil.png" alt="Imagen de perfil"> -->
+            </div>
+        </section>
+        <!----------------------- SECCIÓN PROYECTOS-------------------->
+        <section class="sectionProyectos">
+            <h2 class="numeroDeCabecera">Proyectos</h2>
+            <div class="cardProyectos">
+                <p class="tituloInicial">Características del proyecto</p>
+                <h3 class="tituloProyecto">Aplicacion del clima</h3>
+                <p class="descripcionProyecto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius veniam
+                    nisi deserunt deleniti cumque quod impedit. Reprehenderit debitis modi est distinctio magnam. Velit
+                    cupiditate, delectus consectetur totam reiciendis eaque ipsa.
+                </p>
+                <div class="linkProyecto">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">icono gtihub</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">icono deploy</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <ul>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,414 @@
+@font-face {
+  font-family: "Roboto-Light"; /* reemplaza 'nombre-de-tu-fuente' con el nombre que desees darle a tu fuente */
+  src: url("/assets/fonts/Roboto-Light.ttf") format("truetype"); /* reemplaza 'ruta/de/tu/fuente/fuente.ttf' con la ruta correcta de tu fuente descargada */
+  /* agrega más formatos de fuente aquí si deseas dar soporte a navegadores que no admitan el formato de tu fuente descargada */
+}
+
+/* segunda fuente */
+@font-face {
+  font-family: "Roboto-mid";
+  src: url("/assets/fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+/* tercera fuente */
+@font-face {
+  font-family: "Roboto-bold";
+  src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+/*----------------------------------------------------------*/
+/*-------------------- RESETO CSS --------------------------*/
+/*----------------------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 3.5s ease;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*----------------------------------------------------------*/
+/*-------------------- SET DE TEMAS A ELEGIR ---------------*/
+/*----------------------------------------------------------*/
+
+[data-theme='default'] {
+    --color-bg: #ffffff;
+    --color-bg-offset: #f7f7f9;
+    --color-text: #373a3c;
+    --color-text-offset: #818a91;
+    --color-border: #eceeef;
+    --color-primary: #ff335f;
+    --color-primary-offset: #ff1447;
+    --color-secondary: #43a9a3;
+}
+
+[data-theme='bowser'] {
+    --color-bg: #16161a;
+    --color-bg-offset: #29293e;
+    --color-text: #fffffe;
+    --color-text-offset: #94a1b2;
+    --color-border: #383a61;
+    --color-primary: #7f5af0;
+    --color-primary-offset: #e068fd;
+    --color-secondary: #2cb67d;
+}
+
+[data-theme="light"] {
+  --color-bg: #fef6e4;
+  --color-bg-offset: #f3e1d8;
+  --color-text: #172c66;
+  --color-text-offset: #006e8a;
+  --color-border: #f3d2c1;
+  --color-primary: #f582ae;
+  --color-primary-offset: #fa698b;
+  --color-secondary: #8bd3dd;
+  --color-sidebar: #393646;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0e141b;
+  --color-bg-offset: #252526;
+  --color-text: #ffffff;
+  --color-text-offset: #818a91;
+  --color-border: #2d2d2d;
+  --color-primary: #ff5277;
+  --color-primary-offset: #ff2957;
+  --color-secondary: #43a9a3;
+}
+
+[data-theme='choco'] {
+    --color-bg: #55423d;
+    --color-bg-offset: #41312E;
+    --color-text: #fffffe;
+    --color-text-offset: #ffc0ad;
+    --color-border: #271c19;
+    --color-primary: #f3ab87;
+    --color-primary-offset: #ffc0ad;
+    --color-secondary: #e78fb3;
+}
+
+/*----------------------------------------------------------*/
+/*-------------------- PROPI BODY --------------------------*/
+/*----------------------------------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto-bold", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/*----------------------------------------------------------*/
+/*-------------- SECCION HEADER MENU TEMAS -----------------*/
+/*----------------------------------------------------------*/
+
+#seleccionTema {
+  background-color: var(--color-border);
+  line-height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: max-height .4s cubic-bezier(.4, 0, .2, 1);
+}
+
+#seleccionTema {
+  animation-name: aparecer;
+  animation-duration: .3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  /* Esto asegura que el div se mantenga en su lugar después de la animación */
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+#menuTema {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 1.5rem 2rem;
+  margin: 0;
+}
+
+#menuTema li {
+  display: inline-block;
+  border-radius: .5rem;
+  margin: 0px .3rem;
+}
+
+#menuTema li button {
+  padding: 1rem;
+  border-radius: 0.5em;
+  width: 100%;
+  background-color: var(--color-bg);
+  cursor: pointer;
+  border: none;
+}
+
+.tituloTema {
+  text-align: center;
+  margin: 0;
+}
+
+.iconoTema {
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
+  margin-left: 4rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.miVentanaEmergente {
+  display: none !important;
+}
+
+.nombreTema {
+  display: block;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.coloresPaleta {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  white-space: nowrap;
+  text-indent: 100%;
+  text-align: left;
+  overflow: hidden;
+  vertical-align: bottom;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.listaItemTema.seleccionado {
+    border: 3px solid var(--color-primary);
+}
+
+.listaTema::-webkit-scrollbar {
+    height: 8px;
+}
+
+.listaTema::-webkit-scrollbar-thumb {
+    background: var(--color-primary-offset);
+}
+
+.listaTema::-webkit-scrollbar-track {
+    background: var(--color-bg-offset);
+}
+
+.coloresPaleta{
+  margin-left: -.5rem;
+}
+
+.colorPrimario{
+  background-color: var(--color-primary);
+}
+
+.colorSecundario{
+  background-color: var(--color-secondary);
+}
+
+.colorBorde{
+  background-color: var(--color-border);
+}
+
+.colorTexto{
+  background-color: var(--color-text);
+}
+
+.colorTextoffset{
+  background-color: var(--color-text-offset);
+}
+
+
+
+
+
+/*----------------------------------------------------------*/
+/*----------------- SECCION HEADER NAV ---------------------*/
+/*----------------------------------------------------------*/
+
+.navHeader {
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  color: var();
+}
+
+.logo img {
+  margin-left: 1rem;
+  width: 5rem;
+  object-fit: contain;
+}
+
+.navMenu {
+  display: none;
+}
+
+.iconosPrincipales {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+
+/*----------------------------------------------------------*/
+/*------------------------- MENU HMB------------------------*/
+/*----------------------------------------------------------*/
+
+.barsMenu {
+  width: 30px;
+  height: 30px;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.barsMenu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-text);
+  margin-top: 4px;
+  transform-origin: 0px 100%;
+  transition: all 300ms;
+  border-radius: 1rem;
+}
+
+
+.activeLine1 {
+  transform: rotate(45deg) translate(-4px, 4px);
+}
+
+.activeLine2 {
+  opacity: 0;
+  margin-left: -1.7rem;
+}
+
+.activeLine3 {
+  transform: rotate(-45deg) translate(-8px, 2px);
+}
+
+/*----------------------------------------------------------*/
+/*---------------------VENTNA LATERAL IZQ-------------------*/
+/*----------------------------------------------------------*/
+.menu {
+  position: absolute;
+  top: 0;
+  left: -15rem;
+  width: 15rem;
+  height: 100%;
+  background-color: var(--color-sidebar);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.menu ul {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color:var(--color-primary);
+}
+
+.menu-open .menu {
+  left: 0;
+  z-index: 4;
+}
+
+.containerLink {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.navLink {
+  color: var(--color-border);
+  text-decoration: none;
+  font-size: 1.4rem;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.numVentana {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+.blur {
+  filter: blur(4px);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+/*----------------------------------------------------------*/
+/*---------------------MAIN SECCION HERO--------------------*/
+/*----------------------------------------------------------*/
+
+h1 {
+  text-align: center;
+  color: var(--color-text);
+}
+
+h2 {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+h3{}
+
+p{}
+
+
+
+
+
+
+
+
+
+@media (min-width: 480px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1279px) {
+}
+@media (min-width: 1280px) {
+}
