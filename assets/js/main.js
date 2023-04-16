@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         $menuContainer.classList.toggle('menu-open');
         $main.classList.toggle('blur');
+        document.body.classList.toggle('hidden')
     });
 
     // este evento escucha si el enlace a fue clickeado dentro del menucontainer
