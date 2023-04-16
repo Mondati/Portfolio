@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const $menuContainer = document.querySelector('.menuContainer');
     const $main = document.querySelector('main');
     const $miVentanaEmergente = document.querySelector('.miVentanaEmergente');
+    const $body = document.querySelector('body')
 
 
 
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         $menuContainer.classList.toggle('menu-open');
         $main.classList.toggle('blur');
-        document.body.classList.toggle('hidden')
+        $body.classList.toggle('hidden')
     });
 
     // este evento escucha si el enlace a fue clickeado dentro del menucontainer
