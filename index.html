@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="default">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,33 +18,9 @@
         <div id="seleccionTema" class="miVentanaEmergente">
             <h3 class="tituloTema">Seleccione un tema</h3>
             <ul id="menuTema" class="listaTema">
-                <li class="listaItemTema">
+                <li class="listaItemTema seleccionado">
                     <button id="but" class="botonListaTema" type="button" data-theme="default">
-                        <span class="nombreTema">nombre tema</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="light">
-                        <span class="nombreTema">nombre tema</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="choco">
-                        <span class="nombreTema">nombre tema</span>
+                        <span class="nombreTema">Clasico</span>
                         <span class="paletaTema">
                             <span class="coloresPaleta colorPrimario"></span>
                             <span class="coloresPaleta colorSecundario"></span>
@@ -55,7 +32,31 @@
                 </li>
                 <li class="listaItemTema">
                     <button class="botonListaTema" type="button" data-theme="dark">
-                        <span class="nombreTema">nombre tema</span>
+                        <span class="nombreTema">Oscuro</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="choco">
+                        <span class="nombreTema">Choco</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="light">
+                        <span class="nombreTema">Pastel</span>
                         <span class="paletaTema">
                             <span class="coloresPaleta colorPrimario"></span>
                             <span class="coloresPaleta colorSecundario"></span>
@@ -67,7 +68,7 @@
                 </li>
                 <li class="listaItemTema">
                     <button class="botonListaTema" type="button" data-theme="bowser">
-                        <span class="nombreTema">nombre tema</span>
+                        <span class="nombreTema">Noche</span>
                         <span class="paletaTema">
                             <span class="coloresPaleta colorPrimario"></span>
                             <span class="coloresPaleta colorSecundario"></span>
@@ -89,15 +90,15 @@
                 </ol>
             </div>
             <div class="iconosPrincipales">
-            <div class="iconoTema">
-                <i id="miIcono" class="fa-sharp fa-solid fa-brush"></i>
+                <div class="iconoTema">
+                    <i id="miIcono" class="fa-sharp fa-solid fa-brush"></i>
+                </div>
+                <div class="barsMenu" aria-label="Abrir menú">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </div>
             </div>
-            <div class="barsMenu" aria-label="Abrir menú">
-                <span class="line1"></span>
-                <span class="line2"></span>
-                <span class="line3"></span>
-            </div>
-        </div>
         </nav>
         <div class="menuContainer">
             <div class="menu">
@@ -126,14 +127,18 @@
     <main>
         <!----------------------- SECCIÓN PRESENTACIÓN-------------------->
         <section class="hero">
-            <h1 id="h1">Hola, mi nombre es</h1>
-            <h2 class="nombre">Sergio Agustín Mondati</h2>
-            <h3 class="ocupacion">Developer</h3>
-            <p class="descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
-                fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum architecto a
-                nobis enim natus placeat!
-            </p>
+            <div class="typed">
+                <h1 id="h1"></h1>
+                <h2 class="nombre"></h2>
+                <h3 class="ocupacion"></h3>
+            </div>
+            <div class="descripcion">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
+                    fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum
+                    architecto a
+                    nobis enim natus placeat!
+                </p>
+            </div>
             <div class="cv">
                 <a href="rutaadescargarcv">
                     <button> Descargar CV</button>
@@ -182,16 +187,20 @@
     </main>
 
     <footer>
-        <div class="footer">
+        <div class="redes">
             <ul>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">icono</a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                </li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
+            <div class="email">
+                <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
+            </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
 

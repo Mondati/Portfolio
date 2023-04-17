@@ -81,4 +81,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const $h1 = document.querySelector('h1');
+    const $h2nombre = document.querySelector('.nombre');
+    const $h3ocupacion = document.querySelector('.ocupacion');
+
+    const typed1 = new Typed($h1, {
+        strings: ['Hola, mi nombre es'],
+        typeSpeed: 70,
+        backSpeed: 50,
+        showCursor: false,
+        loop: false,
+        onComplete: function () {
+            const typed2 = new Typed($h2nombre, {
+                strings: ['Sergio Agustín Mondati.'],
+                typeSpeed: 70,
+                backSpeed: 50,
+                showCursor: false,
+                loop: false,
+                onComplete: function () {
+                    const typed3 = new Typed($h3ocupacion, {
+                        strings: ['Developer'],
+                        typeSpeed: 70,
+                        backSpeed: 50,
+                        showCursor: false,
+                        loop: false
+                    });
+                }
+            });
+        }
+    });
+
+
 });

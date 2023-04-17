@@ -1,21 +1,3 @@
-@font-face {
-  font-family: "Roboto-Light"; /* reemplaza 'nombre-de-tu-fuente' con el nombre que desees darle a tu fuente */
-  src: url("/assets/fonts/Roboto-Light.ttf") format("truetype"); /* reemplaza 'ruta/de/tu/fuente/fuente.ttf' con la ruta correcta de tu fuente descargada */
-  /* agrega más formatos de fuente aquí si deseas dar soporte a navegadores que no admitan el formato de tu fuente descargada */
-}
-
-/* segunda fuente */
-@font-face {
-  font-family: "Roboto-mid";
-  src: url("/assets/fonts/Roboto-Medium.ttf") format("truetype");
-}
-
-/* tercera fuente */
-@font-face {
-  font-family: "Roboto-bold";
-  src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
-}
-
 /*----------------------------------------------------------*/
 /*-------------------- RESETO CSS --------------------------*/
 /*----------------------------------------------------------*/
@@ -35,26 +17,26 @@ html {
 /*-------------------- SET DE TEMAS A ELEGIR ---------------*/
 /*----------------------------------------------------------*/
 
-[data-theme='default'] {
-    --color-bg: #ffffff;
-    --color-bg-offset: #f7f7f9;
-    --color-text: #373a3c;
-    --color-text-offset: #818a91;
-    --color-border: #eceeef;
-    --color-primary: #ff335f;
-    --color-primary-offset: #ff1447;
-    --color-secondary: #43a9a3;
+[data-theme="default"] {
+  --color-bg: #ffffff;
+  --color-bg-offset: #f7f7f9;
+  --color-text: #373a3c;
+  --color-text-offset: #818a91;
+  --color-border: #eceeef;
+  --color-primary: #ff335f;
+  --color-primary-offset: #ff1447;
+  --color-secondary: #43a9a3;
 }
 
-[data-theme='bowser'] {
-    --color-bg: #16161a;
-    --color-bg-offset: #29293e;
-    --color-text: #fffffe;
-    --color-text-offset: #94a1b2;
-    --color-border: #383a61;
-    --color-primary: #7f5af0;
-    --color-primary-offset: #e068fd;
-    --color-secondary: #2cb67d;
+[data-theme="bowser"] {
+  --color-bg: #16161a;
+  --color-bg-offset: #29293e;
+  --color-text: #fffffe;
+  --color-text-offset: #94a1b2;
+  --color-border: #383a61;
+  --color-primary: #7f5af0;
+  --color-primary-offset: #e068fd;
+  --color-secondary: #2cb67d;
 }
 
 [data-theme="light"] {
@@ -80,15 +62,15 @@ html {
   --color-secondary: #43a9a3;
 }
 
-[data-theme='choco'] {
-    --color-bg: #55423d;
-    --color-bg-offset: #41312E;
-    --color-text: #fffffe;
-    --color-text-offset: #ffc0ad;
-    --color-border: #271c19;
-    --color-primary: #f3ab87;
-    --color-primary-offset: #ffc0ad;
-    --color-secondary: #e78fb3;
+[data-theme="choco"] {
+  --color-bg: #55423d;
+  --color-bg-offset: #41312e;
+  --color-text: #fffffe;
+  --color-text-offset: #ffc0ad;
+  --color-border: #271c19;
+  --color-primary: #f3ab87;
+  --color-primary-offset: #ffc0ad;
+  --color-secondary: #e78fb3;
 }
 
 /*----------------------------------------------------------*/
@@ -112,14 +94,14 @@ body {
   line-height: 2.5rem;
   display: flex;
   flex-direction: column;
-  transition: max-height .4s cubic-bezier(.4, 0, .2, 1);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #seleccionTema {
   animation-name: aparecer;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-out;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
   /* Esto asegura que el div se mantenga en su lugar después de la animación */
 }
 
@@ -133,7 +115,6 @@ body {
     opacity: 1;
   }
 }
-
 
 #menuTema {
   display: block;
@@ -149,8 +130,8 @@ body {
 
 #menuTema li {
   display: inline-block;
-  border-radius: .5rem;
-  margin: 0px .3rem;
+  border-radius: 0.5rem;
+  margin: 0px 0.3rem;
 }
 
 #menuTema li button {
@@ -167,12 +148,20 @@ body {
   margin: 0;
 }
 
+.iconosPrincipales {
+  display: flex;
+  width: 38%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
 .iconoTema {
   font-size: 1.9rem;
   margin-bottom: 1.2rem;
-  margin-left: 4rem;
   color: var(--color-text);
   cursor: pointer;
+  width: 50%;
 }
 
 .miVentanaEmergente {
@@ -199,55 +188,51 @@ body {
 }
 
 .listaItemTema.seleccionado {
-    border: 3px solid var(--color-primary);
+  border: 3px solid var(--color-primary);
 }
 
 .listaTema::-webkit-scrollbar {
-    height: 8px;
+  height: 8px;
 }
 
 .listaTema::-webkit-scrollbar-thumb {
-    background: var(--color-primary-offset);
+  background: var(--color-primary-offset);
 }
 
 .listaTema::-webkit-scrollbar-track {
-    background: var(--color-bg-offset);
+  background: var(--color-bg-offset);
 }
 
-.coloresPaleta{
-  margin-left: -.5rem;
+.coloresPaleta {
+  margin-left: -0.5rem;
 }
 
-.colorPrimario{
+.colorPrimario {
   background-color: var(--color-primary);
 }
 
-.colorSecundario{
+.colorSecundario {
   background-color: var(--color-secondary);
 }
 
-.colorBorde{
+.colorBorde {
   background-color: var(--color-border);
 }
 
-.colorTexto{
+.colorTexto {
   background-color: var(--color-text);
 }
 
-.colorTextoffset{
+.colorTextoffset {
   background-color: var(--color-text-offset);
 }
-
-
-
-
 
 /*----------------------------------------------------------*/
 /*----------------- SECCION HEADER NAV ---------------------*/
 /*----------------------------------------------------------*/
 
 .navHeader {
-  height: 7rem;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -268,15 +253,6 @@ body {
 .navMenu {
   display: none;
 }
-
-.iconosPrincipales {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
 
 /*----------------------------------------------------------*/
 /*------------------------- MENU HMB------------------------*/
@@ -299,7 +275,6 @@ body {
   transition: all 300ms;
   border-radius: 1rem;
 }
-
 
 .activeLine1 {
   transform: rotate(45deg) translate(-4px, 4px);
@@ -338,7 +313,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color:var(--color-primary);
+  background-color: var(--color-primary);
 }
 
 .menu-open .menu {
@@ -383,27 +358,72 @@ body {
 /*---------------------MAIN SECCION HERO--------------------*/
 /*----------------------------------------------------------*/
 
-h1 {
-  text-align: center;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 85vh;
+  margin-top: 0rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+#h1 {
+  text-align: start;
   color: var(--color-text);
+  font-size: clamp(var(14px), 5vw, var(16px));
+  font-weight: 400;
 }
 
-h2 {
-  text-align: center;
+.nombre {
   color: var(--color-primary);
+  line-height: 1;
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  margin-top: -0.5rem;
 }
 
-h3{}
+.ocupacion {
+  line-height: 0.3;
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  margin-top: 0;
+}
 
-p{}
+.typed {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.descripcion {
+  height: 20vh;
+  color: #8892b0;
+}
 
+.cv a button {
+  border: 1px solid var(--color-primary);
+  padding: 1rem;
+  background-color: var(--color-bg);
+  cursor: pointer;
+  border-radius: .5rem;
+  color: var(--color-primary);
+  width: 14rem;
+  height: 3.5rem;
+}
 
+.redes ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 2rem 0 0 0;
+}
 
-
-
-
-
+.redes ul li {
+  list-style: none;
+}
 
 @media (min-width: 480px) {
 }
