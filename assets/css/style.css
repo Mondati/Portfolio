@@ -377,7 +377,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: s;
   height: 85vh;
   padding: 0 2rem;
   width: 100%;
@@ -416,18 +416,21 @@ body {
 }
 
 .descripcion {
-  height: 30vh;
+  height: 25vh;
   color: #8892b0;
   margin-top: -1rem;
 }
 
 .descripcion p {
-  height: 100%;
-  margin-top: 0;
+  margin-top: -1rem;
   color: var(--color-p);
   font-family: var(--monserrat);
   font-weight: 300;
   line-height: 1.5rem;
+}
+
+.cv {
+  margin-top: -1rem;
 }
 
 .cv a button {
