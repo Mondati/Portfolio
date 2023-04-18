@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         $menuContainer.classList.toggle('menu-open');
         $main.classList.toggle('blur');
-        $body.classList.toggle('hidden')
+        $body.classList.add('hidden')
     });
 
     // este evento escucha si el enlace a fue clickeado dentro del menucontainer
@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cerrar la barra lateral
             $menuContainer.classList.remove('menu-open');
             $main.classList.remove('blur')
+            $body.classList.remove('hidden')
             animateBars()
         }
     });
@@ -93,14 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: false,
         onComplete: function () {
             const typed2 = new Typed($h2nombre, {
-                strings: ['Sergio Agustín Mondati.'],
+                strings: ['Agustín Mondati.'],
                 typeSpeed: 70,
                 backSpeed: 50,
                 showCursor: false,
                 loop: false,
                 onComplete: function () {
                     const typed3 = new Typed($h3ocupacion, {
-                        strings: ['Developer'],
+                        strings: ['Construyo cosas para la web.'],
                         typeSpeed: 70,
                         backSpeed: 50,
                         showCursor: false,
