@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         $menuContainer.classList.toggle('menu-open');
         $main.classList.toggle('blur');
-        $body.classList.add('hidden')
+        $body.classList.toggle('hidden')
     });
 
     // este evento escucha si el enlace a fue clickeado dentro del menucontainer
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cerrar la barra lateral
             $menuContainer.classList.remove('menu-open');
             $main.classList.remove('blur')
-            $body.classList.remove('hidden')
             animateBars()
         }
+        $body.classList.remove('hidden')
     });
 
     //Despliega menu para seleccionar tema
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const $h2nombre = document.querySelector('.nombre');
     const $h3ocupacion = document.querySelector('.ocupacion');
 
+    
     const typed1 = new Typed($h1, {
         strings: ['Hola, mi nombre es'],
         typeSpeed: 70,

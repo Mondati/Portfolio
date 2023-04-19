@@ -20,8 +20,8 @@ html {
 /*----------------------------------------------------------*/
 
 :root {
-  --roboto:'Roboto mono';
-  --monserrat: 'Montserrat'
+  --roboto: "Roboto mono";
+  --monserrat: "Montserrat";
 }
 
 [data-theme="default"] {
@@ -46,6 +46,7 @@ html {
   --color-primary-offset: #ff2957;
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
+  --color-card: #3647599e;
 }
 
 [data-theme="choco"] {
@@ -96,8 +97,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   width: 100%;
+  min-height: 100%;
   font-family: "Montserrat", sans-serif;
   font-family: "Roboto Mono", monospace;
+  counter-reset: section 0;
 }
 
 /*----------------------------------------------------------*/
@@ -169,6 +172,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .iconoTema {
@@ -449,6 +453,10 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.344);
 }
 
+.fas {
+  margin-left: 1rem;
+}
+
 .redes ul {
   display: flex;
   justify-content: space-between;
@@ -459,6 +467,99 @@ body {
 
 .redes ul li {
   list-style: none;
+}
+
+/*----------------------------------------------------------*/
+/*---------------------SECCION SOBRE MI---------------------*/
+/*----------------------------------------------------------*/
+.numeroDeCabecera {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  margin: 10px 0px 40px;
+  width: 100%;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  color: var(--color-primary);
+}
+
+.numeroDeCabecera::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 0px;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--color-primary);
+}
+
+.numeroDeCabecera::before {
+  position: relative;
+  counter-increment: section 1;
+  content: "0" counter(section) ".";
+  margin-right: 5px;
+  color: var(--color-primary);
+  font-family: var(--roboto);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.sectionSobreMi {
+  height: 65vh;
+  padding: 0 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  color: var(--color-p);
+}
+
+.sectionProyectos {
+  padding: 0 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  color: var(--color-p);
+}
+
+.tecnologias ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.tecnologias ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  color: var(--color-p);
+}
+
+.tecnologias ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0px;
+  color: var(--color-primary);
+  font-size: var(--fz-sm);
+  line-height: 1.2rem;
+}
+
+.sectionProyectos {
+  margin-top: 3rem;
+}
+
+.cardProyectos {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 2rem 2rem 1rem;
+  border: #006e8a;
 }
 
 @media (min-width: 480px) {
