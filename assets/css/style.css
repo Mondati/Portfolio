@@ -34,6 +34,7 @@ html {
   --color-primary-offset: #ff1447;
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
+  --color-btn-shadow: rgb(201, 46, 70);
 }
 
 [data-theme="dark"] {
@@ -47,6 +48,7 @@ html {
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
   --color-card: #3647599e;
+  --color-btn-shadow: rgb(201, 46, 70);
 }
 
 [data-theme="choco"] {
@@ -59,6 +61,7 @@ html {
   --color-primary-offset: #ffc0ad;
   --color-secondary: #e78fb3;
   --color-p: #f5ebeb;
+  --color-btn-shadow: #a55547;
 }
 
 [data-theme="light"] {
@@ -72,6 +75,7 @@ html {
   --color-secondary: #8bd3dd;
   --color-sidebar: #393646;
   --color-p: #8892b0;
+  --color-btn-shadow: #b64f67;
 }
 
 [data-theme="bowser"] {
@@ -84,6 +88,7 @@ html {
   --color-primary-offset: #e068fd;
   --color-secondary: #2cb67d;
   --color-p: #8892b0;
+  --color-btn-shadow: #4c368f;
 }
 
 [data-theme="marino"] {
@@ -96,6 +101,7 @@ html {
   --color-primary-offset: #00ffca;
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
+  --color-btn-shadow: #00876c;
 }
 
 /*----------------------------------------------------------*/
@@ -448,19 +454,28 @@ body {
   margin: 0;
 }
 
-.cv {
+.cv a button {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: var(--color-primary);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: var(--color-btn-shadow) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
 }
 
-.cv a button {
-  border: 2px solid var(--color-primary);
-  padding: 1rem;
-  background-color: var(--color-bg);
-  cursor: pointer;
-  border-radius: 0.5rem;
-  color: var(--color-primary);
-  width: 14rem;
-  height: 3.5rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.344);
+.cv a button:hover {
+  box-shadow: var(--color-btn-shadow) 0px 7px 0px 0px;
+}
+
+.cv a button:active {
+  background-color: var(--color-primary);
+  /*50, 168, 80*/
+  box-shadow: var(--color-btn-shadow) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
 }
 
 .fas {
@@ -565,12 +580,17 @@ body {
   margin: 3rem 0;
   color: var(--color-p);
 }
+
 .cardProyectos {
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 1rem;
+  border-radius: 40px;
+  background: inherit;
+  border: 1px solid var(--color-primary);
+  box-shadow: var(--color-btn-shadow) 7px 7px 0px 0px;
 }
 
 /*----------------------------------------------------------*/
@@ -603,7 +623,7 @@ footer {
   text-align: center;
 }
 
-.fa-brands, .fa-solid {
+.fa-brands {
   color: var(--color-primary);
   font-size: 1.5rem;
 }
