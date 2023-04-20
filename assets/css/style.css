@@ -33,7 +33,7 @@ html {
   --color-primary: #ff335f;
   --color-primary-offset: #ff1447;
   --color-secondary: #43a9a3;
-  --color-p: #818a92;
+  --color-p: #8892b0;
 }
 
 [data-theme="dark"] {
@@ -83,6 +83,18 @@ html {
   --color-primary: #7f5af0;
   --color-primary-offset: #e068fd;
   --color-secondary: #2cb67d;
+  --color-p: #8892b0;
+}
+
+[data-theme="marino"] {
+  --color-bg: #0a192f;
+  --color-bg-offset: #0a192f;
+  --color-text: #f7f7f9;
+  --color-text-offset: #008af4;
+  --color-border: #424346;
+  --color-primary: #00ffca;
+  --color-primary-offset: #00ffca;
+  --color-secondary: #43a9a3;
   --color-p: #8892b0;
 }
 
@@ -389,6 +401,7 @@ body {
 
 #h1 {
   height: 5%;
+  padding-bottom: 1.5rem;
   text-align: start;
   color: var(--color-text);
   font-size: clamp(14px, 7vw, 16px);
@@ -398,21 +411,20 @@ body {
 
 .nombre {
   color: var(--color-primary);
-  height: 15%;
-  line-height: 1;
   font-size: clamp(30px, 8vw, 80px);
   font-weight: 600;
-  margin-top: 0.3rem;
+  margin: 0;
+  padding: 0.5rem 0;
   font-family: var(--roboto);
 }
 
 .ocupacion {
-  height: 15%;
-  line-height: -0.1;
   font-size: clamp(30px, 8vw, 80px);
   font-weight: 500;
-  margin-top: -1rem;
+  padding: 0.2rem 0 1rem 0;
   font-family: var(--roboto);
+  margin: 0;
+  padding: 0.2rem 0;
 }
 
 .typed {
@@ -429,16 +441,14 @@ body {
 }
 
 .descripcion p {
-  margin-top: -2rem;
   color: var(--color-p);
   font-family: var(--monserrat);
   font-weight: 300;
-  line-height: 1.5rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  margin: 0;
 }
 
 .cv {
-  margin-top: -1rem;
 }
 
 .cv a button {
@@ -507,10 +517,9 @@ body {
 }
 
 .sectionSobreMi {
-  height: 65vh;
-  padding: 0 2rem;
+  height: 60vh;
+  padding: 2rem;
   width: 100%;
-  margin-bottom: 3rem;
   color: var(--color-p);
 }
 
@@ -567,7 +576,7 @@ body {
 /*----------------------------------------------------------*/
 /*--------------------------FOOTER--------------------------*/
 /*----------------------------------------------------------*/
-.email{
+.email {
   display: none;
 }
 
@@ -581,20 +590,22 @@ footer {
   justify-content: space-between;
   padding: 0 2rem;
   height: 50%;
+  margin: 0;
 }
 
-.fraseFooter  {
+.fraseFooter {
   height: 50%;
   margin: 1rem 0;
   padding: 0 2rem;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 400;
   color: var(--color-p);
   text-align: center;
 }
 
-.fa-brands {
+.fa-brands, .fa-solid {
   color: var(--color-primary);
+  font-size: 1.5rem;
 }
 
 @media (min-width: 480px) {
