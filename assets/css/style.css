@@ -629,9 +629,130 @@ footer {
 }
 
 @media (min-width: 480px) {
+  .descripcion p {
+    margin-bottom: 0;
+    padding-top: 3rem;
+  }
+
+  #miIcono {
+    padding-left: 4rem;
+  }
 }
+
+/*----------------------------------------------------------*/
+/*--------------------------Media queris 768px--------------------------*/
+/*----------------------------------------------------------*/
+
 @media (min-width: 768px) {
+  /*----------------------------------------------------------*/
+  /*--------------------------iconos menu hmb y temas--------------------------*/
+  /*----------------------------------------------------------*/
+
+  .iconoTema {
+    order: 2;
+    padding: 0 2rem 0 0;
+  }
+
+  #miIcono {
+    padding: 0;
+  }
+
+  #menuHamburguesa {
+    order: 1;
+    display: none;
+  }
+
+  .logo {
+    width: 10%;
+    padding-left: 1rem;
+  }
+  /*----------------------------------------------------------*/
+  /*--------------------------section hero--------------------------*/
+  /*----------------------------------------------------------*/
+
+  .sobreMi::marker {
+    color: var(--color-primary);
+  }
+
+  .contacto::marker {
+    color: var(--color-primary);
+  }
+
+  .proyectos::marker {
+    color: var(--color-primary);
+  }
+
+  .navMenu {
+    display: block;
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .menuFlex li a {
+    text-decoration: none;
+  }
+
+ .menuFlex li a:visited {
+   color: var(--color-primary);
+  }
+
+
+  .menuFlex li a::selection {
+   color: var(--color-primary);
+  }
+
+  .navHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    align-items: center;
+    height: 30%;
+  }
+
+  .menuFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .hero {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0px;
+  }
+
+  .iconosPrincipales {
+    width: 10%;
+  }
+
+  .nombre {
+    width: max-content;
+    font-size: 3rem;
+  }
+
+  .ocupacion {
+    font-size: 3rem;
+  }
+
+  .descripcion p {
+    padding: 1rem 0 0 0;
+  }
+
+  .cv {
+    margin-bottom: 4rem;
+  }
 }
+
 @media (min-width: 1279px) {
 }
 @media (min-width: 1280px) {
