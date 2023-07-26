@@ -532,7 +532,7 @@ body {
 }
 
 .sectionSobreMi {
-  height: 60vh;
+  height: 70vh;
   padding: 2rem;
   width: 100%;
   color: var(--color-p);
@@ -584,13 +584,57 @@ body {
 .cardProyectos {
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding: 1rem;
-  border-radius: 40px;
-  background: inherit;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border-radius: 1rem;
   border: 1px solid var(--color-primary);
-  box-shadow: var(--color-btn-shadow) 7px 7px 0px 0px;
+  height: 35rem;
+  box-shadow: var(--color-btn-shadow) 4px 4px 2px;
+}
+
+.fa-arrow-up-right-from-square {
+  color: var(--color-primary-offset);
+}
+
+.imgProyecto {
+  border-radius: 13px !important;
+  background-size: cover;
+  overflow: clip;
+  object-fit: contain;
+  min-height: 300px;
+  border-radius: 13px;
+}
+
+.work-item-tag {
+  font-size: 0.65rem;
+  padding: 1px 7px;
+  margin-right: 5px;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.work-item-tag-container {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.itemTrabajo{
+  margin-bottom: 1rem;
+}
+
+.tituloProyecto {
+  margin-top: 0px;
+  text-align: left;
 }
 
 /*----------------------------------------------------------*/
@@ -692,13 +736,12 @@ footer {
     text-decoration: none;
   }
 
- .menuFlex li a:visited {
-   color: var(--color-primary);
+  .menuFlex li a:visited {
+    color: var(--color-primary);
   }
 
-
   .menuFlex li a::selection {
-   color: var(--color-primary);
+    color: var(--color-primary);
   }
 
   .navHeader {
@@ -753,7 +796,5 @@ footer {
   }
 }
 
-@media (min-width: 1279px) {
-}
 @media (min-width: 1280px) {
 }
