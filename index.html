@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="default">
+<html lang="es" data-theme="marino">
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +18,20 @@
         <div id="seleccionTema" class="miVentanaEmergente">
             <h3 class="tituloTema">Seleccione un tema</h3>
             <ul id="menuTema" class="listaTema">
-                <li class="listaItemTema seleccionado">
-                    <button id="but" class="botonListaTema" type="button" data-theme="default">
+                <li class="listaItemTema  seleccionado">
+                    <button class="botonListaTema" type="button" data-theme="marino">
+                        <span class="nombreTema">Marino</span>
+                        <span class="paletaTema">
+                            <span class="coloresPaleta colorPrimario"></span>
+                            <span class="coloresPaleta colorSecundario"></span>
+                            <span class="coloresPaleta colorBorde"></span>
+                            <span class="coloresPaleta colorTexto"></span>
+                            <span class="coloresPaleta  colorTextoffset"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="listaItemTema">
+                    <button class="botonListaTema" type="button" data-theme="default">
                         <span class="nombreTema">Clasico</span>
                         <span class="paletaTema">
                             <span class="coloresPaleta colorPrimario"></span>
@@ -78,22 +90,9 @@
                         </span>
                     </button>
                 </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="marino">
-                        <span class="nombreTema">Marino</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
             </ul>
         </div>
         <nav class="navHeader">
-            <div class="logo"><img src="" alt="logo"></div>
             <div class="navMenu">
                 <ol class="menuFlex">
                     <li class="proyectos"><a href="#sectionPs">Proyectos</a></li>
@@ -105,35 +104,9 @@
                 <div class="iconoTema">
                     <i id="miIcono" class="fa-sharp fa-solid fa-brush"></i>
                 </div>
-                <div id="menuHamburguesa" class="barsMenu" aria-label="Abrir menú">
-                    <span class="line1"></span>
-                    <span class="line2"></span>
-                    <span class="line3"></span>
-                </div>
             </div>
         </nav>
-        <div class="menuContainer">
-            <div class="menu">
-                <ul>
-                    <div class="containerLink">
-                        <span class="numVentana">01.</span>
-                        <li><a class="navLink" href="#sectionPs">Proyectos</a></li>
-                    </div>
-                    <div class="containerLink">
-                        <span class="numVentana">02.</span>
-                        <li><a class="navLink" href="#">Certificaciones</a></li>
-                    </div>
-                    <div class="containerLink">
-                        <span class="numVentana">03.</span>
-                        <li><a class="navLink" href="#sectionSM">Sobre mí</a></li>
-                    </div>
-                    <div class="containerLink">
-                        <span class="numVentana">04.</span>
-                        <li><a class="navLink" href="#red">Contacto</a></li>
-                    </div>
-                </ul>
-            </div>
-        </div>
+        <div class="logo"><img src="./assets/images/102681176.jpg" alt="logo"></div>
     </header>
 
     <main>
@@ -161,7 +134,8 @@
         <section id="sectionPs" class="sectionProyectos">
             <h2 class="numeroDeCabecera">Proyectos</h2>
             <div class="cardProyectos">
-                <img class="imgProyecto work-item-image" src="./assets/images/encriptador.png" alt="proyecto encriptador de texto">
+                <img class="imgProyecto work-item-image" src="./assets/images/encriptador.png"
+                    alt="proyecto encriptador de texto">
                 <div class="itemTrabajo">
                     <h3 class="tituloProyecto">Aplicacion del clima</h3>
                     <div class="work-item-tag-container row">
@@ -210,7 +184,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div id="red" class="redes">
             <ul>
