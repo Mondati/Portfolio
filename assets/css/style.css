@@ -35,6 +35,7 @@ html {
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
   --color-btn-shadow: rgb(201, 46, 70);
+  --color-icon-a: #8892b0;
 }
 
 [data-theme="dark"] {
@@ -49,6 +50,7 @@ html {
   --color-p: #8892b0;
   --color-card: #3647599e;
   --color-btn-shadow: rgb(201, 46, 70);
+  --color-icon-a: #ccd6f6;
 }
 
 [data-theme="choco"] {
@@ -62,6 +64,7 @@ html {
   --color-secondary: #e78fb3;
   --color-p: #f5ebeb;
   --color-btn-shadow: #a55547;
+  --color-icon-a: #ccd6f6;
 }
 
 [data-theme="light"] {
@@ -76,6 +79,7 @@ html {
   --color-sidebar: #393646;
   --color-p: #8892b0;
   --color-btn-shadow: #b64f67;
+  --color-icon-a: #393646;
 }
 
 [data-theme="bowser"] {
@@ -85,10 +89,11 @@ html {
   --color-text-offset: #94a1b2;
   --color-border: #383a61;
   --color-primary: #7f5af0;
-  --color-primary-offset: #e068fd;
+  --color-primary-offset: #9a51ff;
   --color-secondary: #2cb67d;
   --color-p: #8892b0;
   --color-btn-shadow: #4c368f;
+  --color-icon-a: #ccd6f6;
 }
 
 [data-theme="marino"] {
@@ -102,6 +107,7 @@ html {
   --color-secondary: #43a9a3;
   --color-p: #8892b0;
   --color-btn-shadow: #00876c;
+  --color-icon-a: #ccd6f6;
 }
 
 /*----------------------------------------------------------*/
@@ -259,20 +265,27 @@ body {
 /*----------------------------------------------------------*/
 
 .navHeader {
-  height: 10vh;
+  height: 15vh;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.navMenu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 .menuFlex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 0;
   gap: 1rem;
+  width: 100%;
 }
 
 .menuFlex li {
@@ -282,7 +295,11 @@ body {
 
 .menuFlex li a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-icon-a);
+}
+
+.menuFlex li a:hover {
+  color: var(--color-primary-offset);
 }
 
 .logo {
@@ -298,6 +315,14 @@ body {
   margin: auto;
 }
 
+#miIcono {
+  color: var(--color-icon-a);
+}
+
+#miIcono:hover {
+  color: var(--color-primary-offset);
+}
+
 /*----------------------------------------------------------*/
 /*---------------------MAIN SECCION HERO--------------------*/
 /*----------------------------------------------------------*/
@@ -306,7 +331,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 75vh;
+  height: 60vh;
   padding: 0 2rem;
   width: 100%;
   margin-bottom: 3rem;
@@ -324,7 +349,7 @@ body {
 
 .nombre {
   color: var(--color-primary);
-  font-size: clamp(30px, 8vw, 80px);
+  font-size: 1.6rem;
   font-weight: 600;
   margin: 0;
   padding: 0.5rem 0;
@@ -332,7 +357,7 @@ body {
 }
 
 .ocupacion {
-  font-size: clamp(30px, 8vw, 80px);
+  font-size: 1.6rem;
   font-weight: 500;
   padding: 0.2rem 0 1rem 0;
   font-family: var(--roboto);
@@ -341,16 +366,10 @@ body {
 }
 
 .typed {
-  height: 35%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.descripcion {
-  height: 20vh;
-  color: #8892b0;
-  margin-top: -1rem;
 }
 
 .descripcion p {
@@ -358,7 +377,7 @@ body {
   font-family: var(--monserrat);
   font-weight: 300;
   padding: 1rem 0;
-  margin: 0;
+  margin:0;
 }
 
 .cv a button {
@@ -399,6 +418,14 @@ body {
 
 .redes ul li {
   list-style: none;
+}
+
+.right-email {
+  display: none;
+}
+
+.left-icn {
+  display: none;
 }
 
 /*----------------------------------------------------------*/
@@ -608,30 +635,12 @@ footer {
     padding: 0;
   }
 
-  #menuHamburguesa {
-    order: 1;
-    display: none;
-  }
-
   .logo {
-    width: 10%;
-    padding-left: 1rem;
+    display: none;
   }
   /*----------------------------------------------------------*/
   /*--------------------------section hero--------------------------*/
   /*----------------------------------------------------------*/
-
-  .sobreMi::marker {
-    color: var(--color-primary);
-  }
-
-  .contacto::marker {
-    color: var(--color-primary);
-  }
-
-  .proyectos::marker {
-    color: var(--color-primary);
-  }
 
   .navMenu {
     display: block;
@@ -639,22 +648,11 @@ footer {
     font-size: 0.9rem;
   }
 
-  .menuFlex li a {
-    text-decoration: none;
-  }
-
-  .menuFlex li a:visited {
-    color: var(--color-primary);
-  }
-
-  .menuFlex li a::selection {
-    color: var(--color-primary);
-  }
-
   .navHeader {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 1rem;
     padding: 1rem 0;
     align-items: center;
     height: 30%;
@@ -672,13 +670,120 @@ footer {
     margin: auto;
     display: flex;
     -webkit-box-pack: center;
-    justify-content: space-evenly;
+    justify-content: center;
     -webkit-box-align: center;
     flex-direction: column;
     align-items: flex-start;
     min-height: 100vh;
     height: 100vh;
+  }
+
+  .right-email {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: 40px;
+    z-index: 10;
+    display: block;
+  }
+
+  .right-email-a {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .right-email a {
+    margin: 20px auto;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    color: var(--color-icon-a);
+    text-decoration: none;
+  }
+
+  .right-email a:hover {
+    color: var(--color-primary);
+  }
+
+  .right-email::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--color-icon-a);
+  }
+
+  .left-icn {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    color: var(--color-icon-a);
+    left: 20px;
+    right: auto;
+    display: block;
+  }
+
+  .left-list-icn {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
     padding: 0px;
+    list-style: none;
+  }
+
+  .left-list-icn li {
+    line-height: 4.5rem;
+  }
+
+  .left-list-icn li a {
+    padding: 10px;
+    color: var(--color-icon-a);
+  }
+
+  .left-list-icn li a:hover {
+    color: var(--color-primary);
+  }
+
+  .left-list-icn::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 90px;
+    margin: 0px auto;
+    margin-left: 1.8rem;
+    background-color: var(--color-icon-a);
+  }
+
+  .typed {
+    margin-top: -20rem;
+    height: 20vh;
+  }
+
+  .descripcion p {
+    padding: 0;
+    margin: 3rem 0;
+  }
+
+  .sectionProyectos {
+    width: 70%;
+    margin: auto;
+    height: 60vh;
+  }
+
+  .sectionSobreMi {
+    width: 70%;
+    margin: auto;
   }
 
   .iconosPrincipales {
@@ -692,10 +797,6 @@ footer {
 
   .ocupacion {
     font-size: 3rem;
-  }
-
-  .descripcion p {
-    padding: 1rem 0 0 0;
   }
 
   .cv {
