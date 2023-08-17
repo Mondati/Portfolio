@@ -95,10 +95,11 @@
         <nav class="navHeader">
             <div class="navMenu">
                 <ol class="menuFlex">
-                    <li class="proyectos"><a href="#sectionPs">Proyectos</a></li>
+                    <li class="proyectos"><a href="#sectionPs">Proyectos</a></li>  
+                    <li class="tecnologias"><a href="#section-tecno">Tecnologias</a></li>
                     <li class="sobreMi"><a href="#sectionSM">Sobre mi</a></li>
                     <li class="contacto"><a href="#red">Contacto</a></li>
-                    <li></li>
+                  
                 </ol>
             </div>
             <div class="iconosPrincipales">
@@ -107,7 +108,7 @@
                 </div>
             </div>
         </nav>
-       
+
     </header>
     <div orientation="left" class="left-icn">
         <ul class="left-list-icn">
@@ -158,61 +159,47 @@
         <!----------------------- SECCIÓN PRESENTACIÓN-------------------->
         <section class="hero">
             <div class="presentacion">
-            <div class="typed">
-                <h1 id="h1"></h1>
-                <h2 class="nombre"></h2>
-                <h3 class="ocupacion"></h3>
+                <div class="typed">
+                    <h1 id="h1"></h1>
+                    <h2 class="nombre"></h2>
+                    <h3 class="ocupacion"></h3>
+                </div>
+                <div class="descripcion">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
+                        fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum!
+                    </p>
+                </div>
+                <div class="cv">
+                    <a href="rutaadescargarcv">
+                        <button>Descargar CV<i class="fas fa-regular fa-arrow-down"></i></button>
+                    </a>
+                </div>
             </div>
-            <div class="descripcion">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
-                    fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum!
-                </p>
-            </div>
-            <div class="cv">
-                <a href="rutaadescargarcv">
-                    <button>Descargar CV<i class="fas fa-regular fa-arrow-down"></i></button>
-                </a>
-            </div>
-        </div>
         </section>
         <!----------------------- SECCIÓN PROYECTOS-------------------->
-        <section id="sectionPs" class="sectionProyectos">
+        <section id="sectionPs" class="carousel sectionProyectos">
             <h2 class="numeroDeCabecera">Proyectos</h2>
-            <div class="cardProyectos">
-                <img class="imgProyecto work-item-image" src="./assets/images/encriptador.png"
-                    alt="proyecto encriptador de texto">
-                <div class="itemTrabajo">
-                    <h3 class="tituloProyecto">Aplicacion del clima</h3>
-                    <div class="work-item-tag-container row">
-                        <div class="work-item-tag" style="background: white; border: 1px solid #7C8594; color: #7C8594">
-                            HTML
-                        </div>
-                        <div class="work-item-tag" style="background: white; border: 1px solid #7C8594; color: #7C8594">
-                            CSS
-                        </div>
-                        <div class="work-item-tag" style="background: #FFB800">JavaScript</div>
-                    </div>
-                    <span class="tituloInicial">Características del proyecto</span>
+            <article class="projects-card">
+                <div class="projects-card-img"><a href="https://mohana-proyecto-react.vercel.app/" rel="noreferrer"
+                        target="_blank"><img src="/assets/images/encriptador.png"
+                            alt="Foto portada del proyecto Mohana Indumentaria"></a></div>
+                <div class="projects-card-info">
+                    <h3>Encriptador de texto</h3>
+                    <p>Proyecto a modo de simular la funcion de encriptacion
+                    </p>
+                    <footer><a href="https://mohana-proyecto-react.vercel.app/" rel="noreferrer"
+                            target="_blank">Despliegue del
+                            proyecto</a><a href="https://github.com/luchofseven/mohana-proyecto-react" rel="noreferrer"
+                            target="_blank">Repositorio en GitHub</a></footer>
                 </div>
-                <div class="linkProyecto">
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-
-            </div>
+            </article>
         </section>
-        <!----------------------- SECCIÓN SOBRE MI-------------------->
-        <section id="sectionSM" class="sectionSobreMi">
+        <!----------------------- SECCIÓN Tecnologias-------------------->
+        <section id="section-tecno" class="section-tecno">
             <h2 class="numeroDeCabecera">
-                Sobre Mí
+                Tecnologías
             </h2>
-            <div class="divSobreMi">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero tempora dolorem vitae saepe at
-                    cupiditate voluptatum pariatur voluptas, cum soluta, eius doloribus nostrum culpa maiores molestiae!
-                    Ratione quia consequuntur ipsa?</p>
-                <p>Tecnologías que he usado recientemente</p>
+            <div class="divTecno">
                 <div class="tecnologias">
                     <ul class="habilidades">
                         <li>Html 5</li>
@@ -228,8 +215,22 @@
                 <!-- <img src="./assets/images/imgPerfil.png" alt="Imagen de perfil"> -->
             </div>
         </section>
+        <!----------------------- SECCIÓN SOBRE MI-------------------->
+        <section id="sectionSM" class="sectionSobreMi">
+            <h2 class="numeroDeCabecera">
+                Sobre Mí
+            </h2>
+            <div class="divSobreMi">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero tempora dolorem vitae saepe at
+                    cupiditate voluptatum pariatur voluptas, cum soluta, eius doloribus nostrum culpa maiores molestiae!
+                    Ratione quia consequuntur ipsa?</p>
+            </div>
+            <div>
+                <!-- <img src="./assets/images/imgPerfil.png" alt="Imagen de perfil"> -->
+            </div>
+        </section>
     </main>
-    <footer>
+    <footer class="footer-redes">
         <div id="red" class="redes">
             <ul>
                 <li><a href="http://" target="_blank" rel="noopener noreferrer"><i

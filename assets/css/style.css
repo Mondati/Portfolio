@@ -191,10 +191,8 @@ body {
 }
 
 .iconoTema {
-  font-size: 1.5rem;
   color: var(--color-text);
   cursor: pointer;
-  width: 50%;
 }
 
 .miVentanaEmergente {
@@ -261,17 +259,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: .8rem;
+  width: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-icon-a);
-    border: 3px solid var(--color-bg);
-    border-radius: 10px;
+  background-color: var(--color-icon-a);
+  border: 3px solid var(--color-bg);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--color-bg);
+  background: var(--color-bg);
 }
 
 /*----------------------------------------------------------*/
@@ -289,7 +287,6 @@ body {
 .navMenu {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
 }
 
 .menuFlex {
@@ -298,7 +295,7 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-  gap: 1rem;
+  gap: 0.7rem;
   width: 100%;
 }
 
@@ -310,6 +307,7 @@ body {
 .menuFlex li a {
   text-decoration: none;
   color: var(--color-icon-a);
+  font-size: 0.7rem;
 }
 
 .menuFlex li a:hover {
@@ -318,8 +316,8 @@ body {
 
 #miIcono {
   color: var(--color-icon-a);
+  font-size: 0.8rem;
 }
-
 
 /*----------------------------------------------------------*/
 /*---------------------MAIN SECCION HERO--------------------*/
@@ -475,7 +473,7 @@ body {
 }
 
 .sectionSobreMi {
-  height: 70vh;
+  height: 50vh;
   padding: 2rem;
   width: 100%;
   color: var(--color-p);
@@ -485,22 +483,34 @@ body {
   padding: 0 1rem;
 }
 
+#section-tecno {
+  width: 100%;
+  margin-top: 10rem;
+  padding: 0 2rem;
+  height: 40vh;
+}
+
+.divTecno {
+  padding: 0 1rem;
+}
+
+.divTecno p {
+  color: var(--color-p);
+}
+
+
 .tecnologias ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  gap: 0px 10px;
-  padding: 0px;
-  margin: 20px 0px 0px;
-  overflow: hidden;
+  gap: 0px ;
   list-style: none;
+  justify-content: end;
 }
 
 .tecnologias ul li {
   position: relative;
   margin-bottom: 10px;
   padding-left: 20px;
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
   color: var(--color-p);
 }
 
@@ -509,9 +519,9 @@ body {
   position: absolute;
   left: 0px;
   color: var(--color-primary);
-  font-size: var(--fz-sm);
   line-height: 1.2rem;
 }
+
 
 /*----------------------------------------------------------*/
 /*---------------------SECCION PROYECTOS--------------------*/
@@ -539,45 +549,65 @@ body {
   color: var(--color-primary-offset);
 }
 
-.imgProyecto {
-  border-radius: 13px !important;
-  background-size: cover;
-  overflow: clip;
-  object-fit: contain;
-  min-height: 300px;
-  border-radius: 13px;
+.projects-card .projects-card-img a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.work-item-tag {
-  font-size: 0.65rem;
-  padding: 1px 7px;
-  margin-right: 5px;
-  color: #fff;
-  border-radius: 10px;
-  margin-bottom: 4px;
+.projects-card {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-primary-offset);
+  box-shadow: 0 10px var(--color-primary);
 }
 
-.row {
+.projects-card .projects-card-img {
+  width: 100%;
+  height: 18rem;
+}
+
+.projects-card .projects-card-img a img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.projects-card .projects-card-info {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
 }
 
-.work-item-tag-container {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  max-width: 100%;
-  flex-wrap: wrap;
+.projects-card .projects-card-info h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
 }
 
-.itemTrabajo {
-  margin-bottom: 1rem;
+.projects-card .projects-card-info p {
+  width: 100%;
+  line-height: 24px;
 }
 
-.tituloProyecto {
-  margin-top: 0px;
-  text-align: left;
+.projects-card .projects-card-info footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+.projects-card .projects-card-info footer a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: none;
 }
 
 /*----------------------------------------------------------*/
@@ -587,7 +617,7 @@ body {
   display: none;
 }
 
-footer {
+.footer-redes {
   height: 10vh;
   margin-top: 5rem;
 }
@@ -645,8 +675,8 @@ footer {
   }
 
   #miIcono:hover {
-  color: var(--color-primary-offset);
-}
+    color: var(--color-primary-offset);
+  }
 
   .logo {
     display: none;
@@ -824,7 +854,7 @@ footer {
   .redes ul {
     display: none;
   }
-}
 
-@media (min-width: 1280px) {
+  @media (min-width: 1280px) {
+  }
 }
