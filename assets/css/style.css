@@ -278,10 +278,7 @@ body {
 
 .navHeader {
   height: 8vh;
-  padding: 0rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 1rem 2rem;
 }
 
 .navMenu {
@@ -473,14 +470,15 @@ body {
 }
 
 .sectionSobreMi {
-  height: 50vh;
+  height: 65vh;
   padding: 2rem;
   width: 100%;
   color: var(--color-p);
 }
 
-.divSobreMi {
-  padding: 0 1rem;
+.divSobreMi p {
+  width: 70%;
+  margin: auto;
 }
 
 #section-tecno {
@@ -490,21 +488,23 @@ body {
   height: 40vh;
 }
 
-.divTecno {
-  padding: 0 1rem;
-}
 
 .divTecno p {
   color: var(--color-p);
 }
 
+.tecnologias {
+  width: 70%;
+  margin: auto;
+}
 
 .tecnologias ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  gap: 0px ;
+  gap: 0px;
   list-style: none;
-  justify-content: end;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .tecnologias ul li {
@@ -522,7 +522,6 @@ body {
   line-height: 1.2rem;
 }
 
-
 /*----------------------------------------------------------*/
 /*---------------------SECCION PROYECTOS--------------------*/
 /*----------------------------------------------------------*/
@@ -532,17 +531,6 @@ body {
   width: 100%;
   margin: 3rem 0;
   color: var(--color-p);
-}
-
-.cardProyectos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.8rem;
-  border-radius: 1rem;
-  border: 1px solid var(--color-primary);
-  height: 35rem;
-  box-shadow: var(--color-btn-shadow) 4px 4px 2px;
 }
 
 .fa-arrow-up-right-from-square {
@@ -557,7 +545,8 @@ body {
 }
 
 .projects-card {
-  width: 100%;
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -618,8 +607,13 @@ body {
 }
 
 .footer-redes {
-  height: 10vh;
+  height: 15vh;
   margin-top: 5rem;
+}
+
+.redes {
+  height: 7vh;
+  margin: auto;
 }
 
 .redes ul {
@@ -632,7 +626,7 @@ body {
 
 .fraseFooter {
   height: 50%;
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 0 2rem;
   font-size: 0.7rem;
   font-weight: 400;
@@ -687,25 +681,28 @@ body {
 
   .navMenu {
     display: block;
-    width: 80%;
-    font-size: 0.9rem;
   }
 
   .navHeader {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-    padding: 1rem 0;
-    align-items: center;
+    width: 70%;
     height: 30%;
+    margin: auto;
   }
 
   .menuFlex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .menuFlex li a {
+    font-size: 1rem;
+  }
+
+  #miIcono {
+    font-size: 1rem;
+    cursor: pointer;
   }
 
   .hero {
@@ -853,6 +850,22 @@ body {
 
   .redes ul {
     display: none;
+  }
+
+  #section-tecno {
+    width: 70%;
+    margin: auto;
+    margin-top: 10rem;
+  }
+
+  .footer-redes {
+    height: 5vh;
+  }
+
+  .fraseFooter {
+    width: 70%;
+    margin: auto;
+    font-size: 0.8rem;
   }
 
   @media (min-width: 1280px) {
