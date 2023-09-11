@@ -810,10 +810,6 @@ body {
     background-color: var(--color-icon-a);
   }
 
-  .typed {
-    margin-top: -20rem;
-    height: 20vh;
-  }
 
   .descripcion p {
     padding: 0;
