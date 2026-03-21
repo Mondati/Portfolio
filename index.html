@@ -5,249 +5,438 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Portfolio</title>
+    <title>Agustín Mondati — Backend Developer</title>
 </head>
 
 <body>
-    <header>
-        <div id="seleccionTema" class="miVentanaEmergente">
-            <h3 class="tituloTema">Seleccione un tema</h3>
-            <ul id="menuTema" class="listaTema">
-                <li class="listaItemTema  seleccionado">
-                    <button class="botonListaTema" type="button" data-theme="marino">
-                        <span class="nombreTema">Marino</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="default">
-                        <span class="nombreTema">Clasico</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="dark">
-                        <span class="nombreTema">Oscuro</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="choco">
-                        <span class="nombreTema">Choco</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="light">
-                        <span class="nombreTema">Pastel</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-                <li class="listaItemTema">
-                    <button class="botonListaTema" type="button" data-theme="bowser">
-                        <span class="nombreTema">Noche</span>
-                        <span class="paletaTema">
-                            <span class="coloresPaleta colorPrimario"></span>
-                            <span class="coloresPaleta colorSecundario"></span>
-                            <span class="coloresPaleta colorBorde"></span>
-                            <span class="coloresPaleta colorTexto"></span>
-                            <span class="coloresPaleta  colorTextoffset"></span>
-                        </span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-        <nav class="navHeader">
-            <div class="navMenu">
-                <ol class="menuFlex">
-                    <li class="proyectos"><a href="#sectionPs">Proyectos</a></li>  
-                    <li class="tecnologia"><a href="#section-tecno">Tecnologias</a></li>
-                    <li class="sobreMi"><a href="#sectionSM">Sobre mi</a></li>
-                    <li class="contacto"><a href="#red">Contacto</a></li>
-                  <li> <i id="miIcono" class="fa-sharp fa-solid fa-brush"></i></li>
-                </ol>
-            </div>
-        </nav>
 
-    </header>
-    <div orientation="left" class="left-icn">
-        <ul class="left-list-icn">
-            <li><a href="https://github.com/Mondati" aria-label="GitHub" target="_blank" rel="noreferrer"><svg
-                        xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-github">
-                        <title>GitHub</title>
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                        </path>
-                    </svg></a></li>
-            <li><a href="https://www.instagram.com/agustinmondati/" aria-label="Instagram" target="_blank"
-                    rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-instagram">
-                        <title>Instagram</title>
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg></a></li>
-            <li><a href="https://twitter.com/agusmondati" aria-label="Twitter" target="_blank" rel="noreferrer"><svg
-                        xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-twitter">
-                        <title>Twitter</title>
-                        <path
-                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                        </path>
-                    </svg></a></li>
-            <li><a href="https://www.linkedin.com/in/sergio-agustin-mondati/" aria-label="Linkedin" target="_blank"
-                    rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-linkedin">
-                        <title>LinkedIn</title>
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg></a></li>
+    <!-- PANEL DE TEMAS -->
+    <div class="theme-panel" id="themePanel">
+        <ul class="theme-list">
+            <li class="theme-item active" data-theme="marino">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#0a192f"></span>
+                        <span class="swatch" style="background:#64ffda"></span>
+                        <span class="swatch" style="background:#00b4d8"></span>
+                    </span>
+                    Marino
+                </button>
+            </li>
+            <li class="theme-item" data-theme="dark">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#0d1117"></span>
+                        <span class="swatch" style="background:#58a6ff"></span>
+                        <span class="swatch" style="background:#3fb950"></span>
+                    </span>
+                    Oscuro
+                </button>
+            </li>
+            <li class="theme-item" data-theme="bowser">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#16161a"></span>
+                        <span class="swatch" style="background:#7f5af0"></span>
+                        <span class="swatch" style="background:#2cb67d"></span>
+                    </span>
+                    Noche
+                </button>
+            </li>
+            <li class="theme-item" data-theme="choco">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#3d2b1f"></span>
+                        <span class="swatch" style="background:#ffab40"></span>
+                        <span class="swatch" style="background:#e91e8c"></span>
+                    </span>
+                    Choco
+                </button>
+            </li>
+            <li class="theme-item" data-theme="light">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#fef6e4"></span>
+                        <span class="swatch" style="background:#f582ae"></span>
+                        <span class="swatch" style="background:#006e8a"></span>
+                    </span>
+                    Pastel
+                </button>
+            </li>
+            <li class="theme-item" data-theme="default">
+                <button class="theme-btn">
+                    <span class="palette">
+                        <span class="swatch" style="background:#ffffff"></span>
+                        <span class="swatch" style="background:#e63946"></span>
+                        <span class="swatch" style="background:#457b9d"></span>
+                    </span>
+                    Clásico
+                </button>
+            </li>
         </ul>
     </div>
-    <div orientation="right" class="right-email">
-        <div class="right-email-a">
-            <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
-        </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">&lt;AM /&gt;</a>
+        <ul class="nav-links">
+            <li><a href="#sobre-mi"><span class="num">01.</span>Sobre mí</a></li>
+            <li><a href="#formacion"><span class="num">02.</span>Formación</a></li>
+            <li><a href="#proyectos"><span class="num">03.</span>Proyectos</a></li>
+            <li><a href="#tecnologias"><span class="num">04.</span>Tecnologías</a></li>
+            <li><a href="#contacto"><span class="num">05.</span>Contacto</a></li>
+            <li>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+            </li>
+        </ul>
+        <button class="theme-toggle" id="themeToggleMobile" style="display:none" title="Cambiar tema">
+            <i class="fa-solid fa-palette"></i>
+        </button>
+    </nav>
+
+    <!-- SOCIAL SIDEBAR -->
+    <div class="social-sidebar">
+        <a href="https://github.com/Mondati" target="_blank" rel="noreferrer" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noreferrer" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
     </div>
-    <main>
-        <!----------------------- SECCIÓN PRESENTACIÓN-------------------->
-        <section class="hero">
-            <div class="presentacion">
-                <div class="typed">
-                    <h1 id="h1"></h1>
-                    <h2 class="nombre"></h2>
-                    <h3 class="ocupacion"></h3>
-                </div>
-                <div class="descripcion">
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis nam blanditiis
-                        fugit optio harum dolorum commodi ratione similique esse. Vel explicabo reprehenderit rerum!
-                    </p>
-                </div>
-                <div class="cv">
-                    <a href="rutaadescargarcv">
-                        <button>Descargar CV<i class="fas fa-regular fa-arrow-down"></i></button>
-                    </a>
+
+    <!-- EMAIL SIDEBAR -->
+    <div class="email-sidebar">
+        <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <p class="hero-greeting">Hola, mi nombre es</p>
+        <h1>Agustín Mondati.</h1>
+        <h2>Construyo cosas para el backend.</h2>
+        <p class="hero-desc">
+            Soy desarrollador Backend especializado en <strong>Java + Spring Boot</strong>,
+            apasionado por construir APIs REST robustas y sistemas escalables.
+            Actualmente cursando <strong>Lic. en Informática y Desarrollo de Software</strong>
+            en la Universidad del Aconcagua.
+        </p>
+        <div class="hero-btns">
+            <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
+            <a href="mailto:agustinmondati@gmail.com" class="btn-secondary">Contactame</a>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+        <h2 class="section-title reveal"><span class="num">01.</span> Sobre mí</h2>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>
+                    Soy un desarrollador Backend de Mendoza, Argentina, con foco en el ecosistema
+                    <strong style="color:var(--primary)">Java + Spring</strong>. Me apasiona diseñar
+                    sistemas bien estructurados, desde APIs REST monolíticas hasta arquitecturas de
+                    microservicios con Spring Cloud.
+                </p>
+                <p>
+                    Mi formación combina la carrera universitaria en la
+                    <strong style="color:var(--primary)">Universidad del Aconcagua</strong> con el programa
+                    <strong style="color:var(--primary)">Certified Tech Developer de Digital House</strong>
+                    (avalado por Mercado Libre y Globant, 1.568 hs) y el programa backend de
+                    <strong style="color:var(--primary)">Oracle ONE + Alura</strong>.
+                </p>
+                <p>Algunas tecnologías con las que trabajo actualmente:</p>
+                <ul class="about-skills">
+                    <li>Java 17</li>
+                    <li>Spring Boot</li>
+                    <li>Spring Security</li>
+                    <li>Spring Cloud</li>
+                    <li>Docker</li>
+                    <li>MySQL</li>
+                    <li>JPA / Hibernate</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </div>
+            <div class="about-img-wrap reveal">
+                <div class="about-img-box">
+                    <div class="about-img-placeholder">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>Agustín Mondati</span>
+                        <!-- Reemplazar con: <img src="./assets/images/tu-foto.jpg" alt="Agustín Mondati"> -->
+                    </div>
                 </div>
             </div>
-        </section>
-        <!----------------------- SECCIÓN PROYECTOS-------------------->
-        <section id="sectionPs" class="carousel sectionProyectos">
-            <h2 class="numeroDeCabecera">Proyectos</h2>
-            <article class="projects-card">
-                <div class="projects-card-img"><a href="https://mohana-proyecto-react.vercel.app/" rel="noreferrer"
-                        target="_blank"><img src="/assets/images/encriptador.png"
-                            alt="Foto portada del proyecto Mohana Indumentaria"></a></div>
-                <div class="projects-card-info">
-                    <h3>Encriptador de texto</h3>
-                    <p>Proyecto a modo de simular la funcion de encriptacion
-                    </p>
-                    <footer><a href="https://mohana-proyecto-react.vercel.app/" rel="noreferrer"
-                            target="_blank">Despliegue del
-                            proyecto</a><a href="https://github.com/luchofseven/mohana-proyecto-react" rel="noreferrer"
-                            target="_blank">Repositorio en GitHub</a></footer>
+        </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion">
+        <h2 class="section-title reveal"><span class="num">02.</span> Formación</h2>
+        <div class="edu-list">
+            <div class="edu-card reveal">
+                <div class="edu-header">
+                    <div>
+                        <div class="edu-title">Lic. en Informática y Desarrollo de Software</div>
+                        <div class="edu-org">Universidad del Aconcagua</div>
+                    </div>
+                    <span class="edu-period">2025 — Actualidad</span>
                 </div>
-            </article>
-        </section>
-        <!----------------------- SECCIÓN Tecnologias-------------------->
-        <section id="section-tecno" class="section-tecno">
-            <h2 class="numeroDeCabecera">
-                Tecnologías
-            </h2>
-            <div class="divTecno">
-                <div class="tecnologias">
-                    <ul class="habilidades">
-                        <li>Html 5</li>
-                        <li>Css 3</li>
-                        <li>JavaScrip</li>
-                        <li>React</li>
-                        <li>Java</li>
-                        <li>MySql</li>
+                <p class="edu-desc">Cursando actualmente. Formación integral en sistemas informáticos,
+                desarrollo de software y tecnologías de la información.</p>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-header">
+                    <div>
+                        <div class="edu-title">Certified Tech Developer — Professional Developer</div>
+                        <div class="edu-org">Digital House · Avalado por Mercado Libre & Globant</div>
+                    </div>
+                    <span class="edu-badge">1.568 horas</span>
+                </div>
+                <p class="edu-period" style="margin-top:8px">Mayo 2022 — Febrero 2024</p>
+                <p class="edu-desc">Programa intensivo de desarrollo de software con foco en trabajo
+                colaborativo y metodologías ágiles. Stack: Java, Spring Boot, SQL, Git, HTML/CSS/JS.</p>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-header">
+                    <div>
+                        <div class="edu-title">Programa Backend — Oracle Next Education</div>
+                        <div class="edu-org">Oracle ONE + Alura Latam</div>
+                    </div>
+                    <span class="edu-badge">331 horas</span>
+                </div>
+                <p class="edu-period" style="margin-top:8px">Marzo 2023 — Septiembre 2023</p>
+                <p class="edu-desc">Especialización en desarrollo backend: Spring MVC, Spring Boot,
+                Spring Data, Spring Security, Scrum y metodologías ágiles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+        <h2 class="section-title reveal"><span class="num">03.</span> Proyectos</h2>
+        <div class="projects-list">
+
+          <!-- Proyecto 1 -->
+            <div class="project-card reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto destacado</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">API Tienda Electrónica</h3>
+                        <a href="https://github.com/Mondati/API-Tienda-Electronica" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        API REST con <strong>arquitectura de microservicios</strong> completa para
+                        una tienda de electrodomésticos. Incluye API Gateway, Eureka Server,
+                        Config Server centralizado, comunicación entre servicios con OpenFeign,
+                        Circuit Breaker con Resilience4j y orquestación con Docker Compose.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Spring Cloud</li><li>Docker</li>
+                        <li>Eureka</li><li>OpenFeign</li>
+                        <li>MySQL</li>
                     </ul>
                 </div>
             </div>
-            <div>
-                <!-- <img src="./assets/images/imgPerfil.png" alt="Imagen de perfil"> -->
+
+            <!-- Proyecto 2 -->
+            <div class="project-card reverse reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto destacado</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">API Clínica Odontológica</h3>
+                        <a href="https://github.com/Mondati/Clinica-Odontologica" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        API REST para gestión de clínica odontológica con <strong>Spring Security</strong>
+                        y roles diferenciados (ADMIN / USER). Incluye gestión de pacientes, odontólogos
+                        y turnos, documentación con Swagger UI, y frontend propio en HTML/CSS/JS.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Spring Security</li><li>BCrypt</li>
+                        <li>H2</li><li>Swagger</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-        <!----------------------- SECCIÓN SOBRE MI-------------------->
-        <section id="sectionSM" class="sectionSobreMi">
-            <h2 class="numeroDeCabecera">
-                Sobre Mí
-            </h2>
-            <div class="divSobreMi">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero tempora dolorem vitae saepe at
-                    cupiditate voluptatum pariatur voluptas, cum soluta, eius doloribus nostrum culpa maiores molestiae!
-                    Ratione quia consequuntur ipsa?</p>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto grupal · Digital House</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">DH Booking Reservas</h3>
+                        <a href="https://github.com/Mondati/DH-Booking-Reservas" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        Sistema de reservas gastronómicas estilo Booking, desarrollado en equipo como
+                        <strong>proyecto final del CTD de Digital House</strong>. Incluye registro/login
+                        con roles, validación de fechas solapadas mediante queries nativas y CORS.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Spring Security</li><li>MySQL</li>
+                        <li>CORS</li><li>JPA Nativo</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <!-- <img src="./assets/images/imgPerfil.png" alt="Imagen de perfil"> -->
+
+            <!-- Proyecto 4 -->
+            <div class="project-card reverse reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto destacado</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">API Gestión de Ventas</h3>
+                        <a href="https://github.com/Mondati/API-Gestion-Clientes-Productos-Ventas" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        API REST para gestión de clientes, productos y ventas con
+                        <strong>consultas de negocio</strong> avanzadas: monto total por día,
+                        venta con mayor importe, listado de productos por venta.
+                        Documentada con Swagger UI.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Spring Boot 3</li><li>MySQL</li>
+                        <li>Swagger</li><li>JPA</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-    </main>
-    <footer class="footer-redes">
-        <div id="red" class="redes">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-brands fa-linkedin-in"></i></a>
-                </li>
-                <li><a href="https://github.com/Mondati" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                </li>
-                <li><a href="https://twitter.com/agusmondati" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-            <div class="fraseFooter">Pensado y construido por Agustín Mondati</div>
-            <div class="email">
-                <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
+
+            <!-- Proyecto 5 -->
+            <div class="project-card reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto universitario</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">Blackjack Java</h3>
+                        <a href="https://github.com/Mondati/Blackjack" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        Juego de Blackjack de escritorio con interfaz gráfica en <strong>Java Swing</strong>,
+                        arquitectura MVC, caché de imágenes con SwingWorker, historial de partidas
+                        persistido en disco y suite de tests con JUnit 5.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Java Swing</li><li>MVC</li><li>JUnit 5</li><li>Maven</li>
+                    </ul>
+                </div>
             </div>
+
         </div>
+    </section>
+
+    <!-- TECNOLOGÍAS -->
+    <section id="tecnologias">
+        <h2 class="section-title reveal"><span class="num">04.</span> Tecnologías</h2>
+
+        <p class="tech-section-title reveal">Backend</p>
+        <div class="tech-grid reveal">
+            <div class="tech-item"><i class="fa-brands fa-java"></i><span>Java 17</span></div>
+            <div class="tech-item"><i class="fa-solid fa-leaf"></i><span>Spring Boot</span></div>
+            <div class="tech-item"><i class="fa-solid fa-shield-halved"></i><span>Spring Security</span></div>
+            <div class="tech-item"><i class="fa-solid fa-cloud"></i><span>Spring Cloud</span></div>
+            <div class="tech-item"><i class="fa-solid fa-database"></i><span>Spring Data JPA</span></div>
+            <div class="tech-item"><i class="fa-solid fa-layer-group"></i><span>Hibernate</span></div>
+        </div>
+
+        <p class="tech-section-title reveal">Base de datos & DevOps</p>
+        <div class="tech-grid reveal">
+            <div class="tech-item"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+            <div class="tech-item"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+            <div class="tech-item"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+            <div class="tech-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+            <div class="tech-item"><i class="fa-solid fa-file-code"></i><span>Maven</span></div>
+            <div class="tech-item"><i class="fa-solid fa-book-open"></i><span>Swagger</span></div>
+        </div>
+
+        <p class="tech-section-title reveal">Frontend & Otros</p>
+        <div class="tech-grid reveal">
+            <div class="tech-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+            <div class="tech-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+            <div class="tech-item"><i class="fa-solid fa-vial"></i><span>JUnit 5</span></div>
+            <div class="tech-item"><i class="fa-solid fa-terminal"></i><span>Postman</span></div>
+        </div>
+
+        <p class="tech-section-title reveal">Conocimientos básicos</p>
+        <div class="tech-grid reveal">
+            <div class="tech-item"><i class="fa-solid fa-c"></i><span>C</span></div>
+            <div class="tech-item"><i class="fa-solid fa-code"></i><span>C++</span></div>
+        </div>
+
+        <p class="tech-section-title reveal">Metodologías de trabajo</p>
+        <div class="tech-grid reveal">
+            <div class="tech-item"><i class="fa-solid fa-arrows-spin"></i><span>Scrum</span></div>
+            <div class="tech-item"><i class="fa-solid fa-list-check"></i><span>Agile</span></div>
+            <div class="tech-item"><i class="fa-brands fa-trello"></i><span>Trello</span></div>
+            <div class="tech-item"><i class="fa-solid fa-people-group"></i><span>Trabajo en equipo</span></div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <div class="contact-wrapper">
+            <p class="contact-overline reveal">05. ¿Qué sigue?</p>
+            <h2 class="contact-title reveal">Hablemos</h2>
+            <p class="contact-desc reveal">
+                Estoy buscando mis primeras oportunidades laborales como desarrollador Backend.
+                Si tenés una propuesta, pregunta o simplemente querés charlar,
+                mi bandeja de entrada está abierta.
+            </p>
+            <a href="mailto:agustinmondati@gmail.com" class="btn-primary reveal">
+                Escribime un mensaje
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Pensado y construido por <a href="https://github.com/Mondati">Agustín Mondati</a></p>
+        <p style="margin-top:8px; font-size:0.7rem">
+            <a href="https://github.com/Mondati" style="margin:0 8px"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" style="margin:0 8px"><i class="fa-brands fa-linkedin-in"></i></a>
+        </p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
     <script src="./assets/js/main.js"></script>
 
-
 </body>
-
 </html>
