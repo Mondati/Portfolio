@@ -544,16 +544,16 @@
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 768px) {
-<<<<<<< HEAD
+
             .theme-panel.open { max-height: 220px; }
             .theme-list { padding: 12px 12px; gap: 8px; }
             .theme-item { flex: 1 1 100%; min-width: auto; max-width: none; }
             .theme-btn { width: 100%; height: 44px; }
 
-=======
+
             .theme-panel.open { max-height: 140px; }
             .theme-list { padding: 12px 20px; gap: 8px; }
->>>>>>> 42cb2cdc0363c5325194d4f18859a9fc49f454d6
+
             nav { padding: 0 20px; }
             .nav-links { display: none; }
             .mobile-controls { display: flex; }
