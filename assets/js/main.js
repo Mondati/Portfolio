@@ -10,19 +10,31 @@ const themeToggle = document.getElementById('themeToggle');
 const themeToggleMobile = document.getElementById('themeToggleMobile');
 
 function togglePanel() {
-    themePanel.classList.toggle('open');
+    const isOpen = themePanel.classList.toggle('open');
+    navbar.classList.toggle('panel-open', isOpen);
 }
 themeToggle.addEventListener('click', togglePanel);
 themeToggleMobile.addEventListener('click', togglePanel);
+
+// Cargar tema guardado
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.querySelectorAll('.theme-item').forEach(i => {
+        i.classList.toggle('active', i.dataset.theme === savedTheme);
+    });
+}
 
 // Aplicar tema
 document.querySelectorAll('.theme-item').forEach(item => {
     item.querySelector('.theme-btn').addEventListener('click', () => {
         const theme = item.dataset.theme;
         document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
         document.querySelectorAll('.theme-item').forEach(i => i.classList.remove('active'));
         item.classList.add('active');
         themePanel.classList.remove('open');
+        navbar.classList.remove('panel-open');
     });
 });
 
@@ -30,7 +42,19 @@ document.querySelectorAll('.theme-item').forEach(item => {
 document.addEventListener('click', (e) => {
     if (!themePanel.contains(e.target) && !themeToggle.contains(e.target) && !themeToggleMobile.contains(e.target)) {
         themePanel.classList.remove('open');
+        navbar.classList.remove('panel-open');
     }
+});
+
+// ===== MOBILE NAV =====
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileNavClose = document.getElementById('mobileNavClose');
+
+hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+mobileNavClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileNav.classList.remove('open'));
 });
 
 // ===== SCROLL REVEAL =====
@@ -43,8 +67,3 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ===== MOBILE THEME TOGGLE =====
-if (window.innerWidth <= 768) {
-    document.getElementById('themeToggleMobile').style.display = 'block';
-}
