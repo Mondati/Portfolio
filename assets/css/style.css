@@ -556,7 +556,7 @@
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 768px) {
-            :root { --theme-panel-height: 200px; }
+            :root { --theme-panel-height: 120px; }
             .theme-panel.open { max-height: var(--theme-panel-height); }
             .theme-list {
                 display: grid;
