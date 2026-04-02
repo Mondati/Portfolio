@@ -119,11 +119,16 @@
             text-align: center;
         }
 
-        [data-theme="default"] .theme-btn,
-        [data-theme="light"] .theme-btn {
+        .theme-item[data-theme="default"] .theme-btn {
+            color: #1a1a2e;
+            background: rgba(230,57,70,0.12);
+            border-color: rgba(230,57,70,0.3);
+        }
+
+        .theme-item[data-theme="light"] .theme-btn {
             color: #172c66;
-            background: rgba(255,255,255,0.9);
-            border: 1px solid rgba(23, 44, 102, 0.25);
+            background: rgba(245,130,174,0.15);
+            border-color: rgba(245,130,174,0.4);
         }
         .theme-btn .palette {
             justify-content: center;
