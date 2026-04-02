@@ -110,13 +110,20 @@
             gap: 8px;
             background: rgba(255,255,255,0.07);
             border: 1px solid rgba(255,255,255,0.18);
-            color: var(--text);
+            color: #ccd6f6;
             font-family: var(--fira);
             font-size: 0.75rem; padding: 0 12px;
             border-radius: 4px; cursor: pointer;
             transition: all 0.2s ease;
             white-space: nowrap;
             text-align: center;
+        }
+
+        [data-theme="default"] .theme-btn,
+        [data-theme="light"] .theme-btn {
+            color: #172c66;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(23, 44, 102, 0.25);
         }
         .theme-btn .palette {
             justify-content: center;
