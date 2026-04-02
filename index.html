@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/android-chrome-192x192.png">
     <title>Agustín Mondati — Backend Developer</title>
 </head>
 
@@ -94,10 +96,29 @@
                 </button>
             </li>
         </ul>
-        <button class="theme-toggle" id="themeToggleMobile" style="display:none" title="Cambiar tema">
-            <i class="fa-solid fa-palette"></i>
-        </button>
+        <div class="mobile-controls">
+            <button class="theme-toggle" id="themeToggleMobile" title="Cambiar tema">
+                <i class="fa-solid fa-palette"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
     </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#sobre-mi"><span class="num">01.</span>Sobre mí</a></li>
+            <li><a href="#formacion"><span class="num">02.</span>Formación</a></li>
+            <li><a href="#proyectos"><span class="num">03.</span>Proyectos</a></li>
+            <li><a href="#tecnologias"><span class="num">04.</span>Tecnologías</a></li>
+            <li><a href="#contacto"><span class="num">05.</span>Contacto</a></li>
+        </ul>
+    </div>
 
     <!-- SOCIAL SIDEBAR -->
     <div class="social-sidebar">
