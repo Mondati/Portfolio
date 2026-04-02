@@ -13,8 +13,12 @@ function togglePanel() {
     const isOpen = themePanel.classList.toggle('open');
     navbar.classList.toggle('panel-open', isOpen);
 }
-themeToggle.addEventListener('click', togglePanel);
-themeToggleMobile.addEventListener('click', togglePanel);
+if (themeToggle) {
+    themeToggle.addEventListener('click', togglePanel);
+}
+if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', togglePanel);
+}
 
 // Cargar tema guardado
 const savedTheme = localStorage.getItem('portfolio-theme');
@@ -40,7 +44,10 @@ document.querySelectorAll('.theme-item').forEach(item => {
 
 // Cerrar panel al hacer click afuera
 document.addEventListener('click', (e) => {
-    if (!themePanel.contains(e.target) && !themeToggle.contains(e.target) && !themeToggleMobile.contains(e.target)) {
+    const clickedInsidePanel = themePanel.contains(e.target);
+    const clickedToggle = (themeToggle && themeToggle.contains(e.target)) || (themeToggleMobile && themeToggleMobile.contains(e.target));
+
+    if (!clickedInsidePanel && !clickedToggle) {
         themePanel.classList.remove('open');
         navbar.classList.remove('panel-open');
     }
