@@ -497,6 +497,9 @@
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 768px) {
+            .theme-panel.open { max-height: 140px; }
+            .theme-list { padding: 12px 20px; gap: 8px; }
+            nav.panel-open { top: 140px; }
             nav { padding: 0 20px; }
             .nav-links { display: none; }
             .mobile-controls { display: flex; }
