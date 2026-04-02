@@ -173,7 +173,7 @@
             font-size: 1rem;
             transition: all 0.2s;
         }
-<<<<<<< HEAD
+
         .theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
         nav.panel-open { top: 80px; }
         .mobile-controls { display: none; align-items: center; gap: 12px; }
@@ -184,7 +184,7 @@
             transition: all 0.2s;
         }
         .hamburger:hover { border-color: var(--primary); color: var(--primary); }
-=======
+
         .theme-toggle:hover,
         .hamburger:hover {
             border-color: var(--primary);
@@ -192,7 +192,7 @@
         }
         nav.panel-open { top: 80px; }
         .mobile-controls { display: none; align-items: center; gap: 12px; }
->>>>>>> gh-pages
+
 
         /* ===================== SOCIAL SIDEBAR ===================== */
         .social-sidebar {
