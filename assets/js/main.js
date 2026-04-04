@@ -1,8 +1,15 @@
-// ===== NAVBAR SCROLL =====
+// ===== NAVBAR SCROLL (throttled with rAF) =====
 const navbar = document.getElementById('navbar');
+let ticking = false;
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            ticking = false;
+        });
+        ticking = true;
+    }
+}, { passive: true });
 
 // ===== THEME PANEL =====
 const themePanel = document.getElementById('themePanel');
@@ -20,9 +27,10 @@ if (themeToggleMobile) {
     themeToggleMobile.addEventListener('click', togglePanel);
 }
 
-// Cargar tema guardado
+// Cargar tema guardado (con validación contra whitelist)
+const VALID_THEMES = ['marino', 'dark', 'bowser', 'choco', 'light', 'default'];
 const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme) {
+if (savedTheme && VALID_THEMES.includes(savedTheme)) {
     document.documentElement.setAttribute('data-theme', savedTheme);
     document.querySelectorAll('.theme-item').forEach(i => {
         i.classList.toggle('active', i.dataset.theme === savedTheme);
@@ -53,15 +61,54 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ===== MOBILE NAV =====
+// ===== MOBILE NAV (con focus trap y soporte Escape) =====
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 const mobileNavClose = document.getElementById('mobileNavClose');
 
-hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
-mobileNavClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+function trapFocus(element) {
+    const focusable = element.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    function onKeydown(e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    }
+
+    element.addEventListener('keydown', onKeydown);
+    return () => element.removeEventListener('keydown', onKeydown);
+}
+
+let releaseTrap = null;
+
+function openMobileNav() {
+    mobileNav.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    releaseTrap = trapFocus(mobileNav);
+    mobileNavClose.focus();
+}
+
+function closeMobileNav() {
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    if (releaseTrap) { releaseTrap(); releaseTrap = null; }
+    hamburger.focus();
+}
+
+hamburger.addEventListener('click', openMobileNav);
+mobileNavClose.addEventListener('click', closeMobileNav);
+// Auto-cerrar el nav mobile al hacer click en un link
 mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mobileNav.classList.remove('open'));
+    a.addEventListener('click', closeMobileNav);
+});
+// Cerrar con Escape
+mobileNav.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileNav();
 });
 
 // ===== SCROLL REVEAL =====

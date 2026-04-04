@@ -95,7 +95,7 @@
             <button class="theme-toggle" id="themeToggleMobile" title="Cambiar tema">
                 <i class="fa-solid fa-palette"></i>
             </button>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -120,7 +120,7 @@
         <a href="https://github.com/Mondati" target="_blank" rel="noreferrer" title="GitHub">
             <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer" title="Sergio Agustín Mondati en LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
         </a>
         <a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noreferrer" title="Instagram">
@@ -147,6 +147,10 @@
         <div class="hero-btns">
             <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
             <a href="mailto:agustinmondati@gmail.com" class="btn-secondary">Contactame</a>
+            <a href="./assets/docs/cv-agustin-mondati.pdf" download="CV-Agustin-Mondati.pdf" class="btn-cv" aria-label="Descargar CV de Agustín Mondati en PDF">
+                <i class="fas fa-file-download" aria-hidden="true"></i>
+                Descargar CV
+            </a>
         </div>
     </section>
 
@@ -182,10 +186,9 @@
             </div>
             <div class="about-img-wrap reveal">
                 <div class="about-img-box">
-                    <div class="about-img-placeholder">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <span>Agustín Mondati</span>
-                        <!-- Reemplazar con: <img src="./assets/images/tu-foto.jpg" alt="Agustín Mondati"> -->
+                    <div class="about-img-placeholder" aria-label="Foto de perfil de Agustín Mondati">
+                        <span class="avatar-initials">AM</span>
+                        <!-- Cuando tengas foto: reemplazar todo este div por <img src="./assets/images/tu-foto.jpg" alt="Agustín Mondati" class="profile-photo"> -->
                     </div>
                 </div>
             </div>
@@ -385,12 +388,12 @@
 
         <p class="tech-section-title reveal">Backend</p>
         <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-brands fa-java"></i><span>Java 17</span></div>
-            <div class="tech-item"><i class="fa-solid fa-leaf"></i><span>Spring Boot</span></div>
-            <div class="tech-item"><i class="fa-solid fa-shield-halved"></i><span>Spring Security</span></div>
-            <div class="tech-item"><i class="fa-solid fa-cloud"></i><span>Spring Cloud</span></div>
-            <div class="tech-item"><i class="fa-solid fa-database"></i><span>Spring Data JPA</span></div>
-            <div class="tech-item"><i class="fa-solid fa-layer-group"></i><span>Hibernate</span></div>
+            <div class="tech-item tech-primary"><i class="fa-brands fa-java"></i><span>Java 17</span></div>
+            <div class="tech-item tech-primary"><i class="fa-solid fa-leaf"></i><span>Spring Boot</span></div>
+            <div class="tech-item tech-primary"><i class="fa-solid fa-shield-halved"></i><span>Spring Security</span></div>
+            <div class="tech-item tech-primary"><i class="fa-solid fa-cloud"></i><span>Spring Cloud</span></div>
+            <div class="tech-item tech-primary"><i class="fa-solid fa-database"></i><span>Spring Data JPA</span></div>
+            <div class="tech-item tech-primary"><i class="fa-solid fa-layer-group"></i><span>Hibernate</span></div>
         </div>
 
         <p class="tech-section-title reveal">Base de datos & DevOps</p>
@@ -433,9 +436,9 @@
             <p class="contact-overline reveal">05. ¿Qué sigue?</p>
             <h2 class="contact-title reveal">Hablemos</h2>
             <p class="contact-desc reveal">
-                Estoy buscando mis primeras oportunidades laborales como desarrollador Backend.
-                Si tenés una propuesta, pregunta o simplemente querés charlar,
-                mi bandeja de entrada está abierta.
+                Estoy disponible para sumarme a un equipo donde pueda aportar soluciones backend
+                con <strong>Java y Spring Boot</strong>, y seguir creciendo profesionalmente.
+                Si tenés una propuesta o simplemente querés charlar, escribime.
             </p>
             <a href="mailto:agustinmondati@gmail.com" class="btn-primary reveal">
                 Escribime un mensaje
@@ -448,7 +451,7 @@
         <p>Pensado y construido por <a href="https://github.com/Mondati">Agustín Mondati</a></p>
         <p style="margin-top:8px; font-size:0.7rem">
             <a href="https://github.com/Mondati" style="margin:0 8px"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" style="margin:0 8px"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" style="margin:0 8px" title="Sergio Agustín Mondati en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </p>
     </footer>
 

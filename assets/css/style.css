@@ -34,7 +34,7 @@
         }
         [data-theme="choco"] {
             --bg: #3d2b1f; --bg2: #4e342e; --bg3: #5d4037;
-            --text: #fffde7; --text2: #ffccbc; --text3: #fff9c4;
+            --text: #ffffff; --text2: #ffccbc; --text3: #fff9c4;
             --primary: #ffab40; --primary2: #e91e8c;
             --border: #6d4c41; --card: #4e342e;
             --shadow: rgba(0,0,0,0.4);
@@ -205,15 +205,6 @@
         }
         .hamburger:hover { border-color: var(--primary); color: var(--primary); }
 
-        .theme-toggle:hover,
-        .hamburger:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        nav.panel-open { top: calc(var(--theme-panel-height)); }
-        .mobile-controls { display: flex; align-items: center; gap: 12px; }
-        .mobile-controls .hamburger { display: none; }
-
 
         /* ===================== SOCIAL SIDEBAR ===================== */
         .social-sidebar {
@@ -314,6 +305,16 @@
             transition: all 0.2s ease; font-weight: 600;
         }
         .btn-secondary:hover { opacity: 0.85; }
+        .btn-cv {
+            padding: 14px 28px; background: transparent;
+            border: 1px solid var(--primary); color: var(--primary);
+            font-family: var(--fira); font-size: 0.85rem;
+            border-radius: 4px; cursor: pointer; text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-cv:hover { background: rgba(var(--primary-rgb), 0.08); }
+        .btn-disabled { opacity: 0.45; pointer-events: none; cursor: not-allowed; }
 
         /* ===================== SOBRE MÍ ===================== */
         .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; }
@@ -342,13 +343,15 @@
             border: 2px solid var(--primary); border-radius: 4px;
             z-index: 0; transition: all 0.3s;
         }
-        .about-img-box:hover::after { top: 12px; left: 12px; }
         .about-img-box img {
             width: 100%; height: 100%; object-fit: cover;
             border-radius: 4px; position: relative; z-index: 1;
             filter: grayscale(20%); transition: filter 0.3s;
         }
-        .about-img-box:hover img { filter: none; }
+        @media (hover: hover) and (pointer: fine) {
+            .about-img-box:hover::after { top: 12px; left: 12px; }
+            .about-img-box:hover img { filter: none; }
+        }
         .about-img-placeholder {
             width: 100%; height: 100%;
             background: var(--bg2); border-radius: 4px;
@@ -360,6 +363,16 @@
             border: 1px solid var(--border);
         }
         .about-img-placeholder i { font-size: 2.5rem; color: var(--primary); }
+        .avatar-initials {
+            font-size: 4rem; font-weight: 700;
+            color: var(--primary); font-family: var(--fira);
+            letter-spacing: 0.05em; user-select: none;
+        }
+        .profile-photo {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 4px; position: relative; z-index: 1;
+            filter: grayscale(20%); transition: filter 0.3s;
+        }
 
         /* ===================== EXPERIENCIA / CURSOS ===================== */
         .edu-list { display: flex; flex-direction: column; gap: 24px; }
@@ -369,7 +382,9 @@
             transition: all 0.2s; position: relative;
             border-left: 3px solid var(--primary);
         }
-        .edu-card:hover { transform: translateX(4px); border-color: var(--primary); }
+        @media (hover: hover) and (pointer: fine) {
+            .edu-card:hover { transform: translateX(4px); border-color: var(--primary); }
+        }
         .edu-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
         .edu-title { font-size: 1rem; font-weight: 600; color: var(--text); }
         .edu-org { color: var(--primary); font-size: 0.9rem; margin: 4px 0; }
@@ -481,9 +496,15 @@
             display: flex; flex-direction: column; align-items: center; gap: 10px;
             transition: all 0.2s; cursor: default;
         }
-        .tech-item:hover { border-color: var(--primary); transform: translateY(-4px); }
+        @media (hover: hover) and (pointer: fine) {
+            .tech-item:hover { border-color: var(--primary); transform: translateY(-4px); }
+        }
         .tech-item i { font-size: 1.8rem; color: var(--primary); }
         .tech-item span { font-family: var(--fira); font-size: 0.75rem; color: var(--text2); text-align: center; }
+        .tech-item.tech-primary {
+            border-color: rgba(var(--primary-rgb), 0.4);
+            background: rgba(var(--primary-rgb), 0.06);
+        }
         .tech-section-title {
             font-family: var(--fira); font-size: 0.8rem;
             color: var(--primary); margin: 32px 0 16px;
@@ -557,6 +578,12 @@
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ===================== RESPONSIVE ===================== */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section { padding: 80px 40px 80px 60px; }
+            .about-img-box { width: 200px; height: 200px; }
+            .project-info { padding: 16px; }
+        }
+
         @media (max-width: 768px) {
             :root { --theme-panel-height: 120px; }
             .theme-panel.open { max-height: var(--theme-panel-height); }
@@ -595,4 +622,17 @@
             .project-card.reverse { direction: ltr; }
             .project-img { display: none; }
             .social-sidebar, .email-sidebar { display: none; }
+            .btn-cv { padding: 14px 20px; font-size: 0.8rem; }
+        }
+
+        /* ===================== PRINT ===================== */
+        @media print {
+            nav, .theme-panel, .social-sidebar, .email-sidebar,
+            .hamburger, .mobile-controls, .btn-cv { display: none !important; }
+            * { background: white !important; color: black !important;
+                box-shadow: none !important; text-shadow: none !important; }
+            body { font-size: 12pt; }
+            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+            a[href^="#"]::after, a[href^="mailto"]::after { content: ""; }
+            section { page-break-inside: avoid; padding: 20px 0; }
         }
