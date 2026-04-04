@@ -258,21 +258,52 @@
                         </a>
                     </div>
                     <div class="project-desc">
-                        API REST con <strong>arquitectura de microservicios</strong> completa para
-                        una tienda de electrodomésticos. Incluye API Gateway, Eureka Server,
-                        Config Server centralizado, comunicación entre servicios con OpenFeign,
-                        Circuit Breaker con Resilience4j y orquestación con Docker Compose.
+                        Backend para una tienda de electrodomésticos que necesitaba escalar sus operaciones de productos, carritos y ventas de forma independiente.
+                        Diseñé una <strong>arquitectura de microservicios</strong> con 7 servicios distribuidos: cada uno tiene su propia base de datos MySQL,
+                        se registra en Eureka automáticamente, recibe configuración desde un Config Server centralizado en Git,
+                        y se comunica a través de un API Gateway único. Docker Compose orquesta el entorno completo con un solo comando.
+                        Implementé Circuit Breaker con Resilience4j para manejar fallos entre servicios sin propagar errores en cascada.
                     </div>
                     <ul class="project-tech">
-                        <li>Spring Cloud</li><li>Docker</li>
+                        <li>Spring Cloud 2023</li><li>Docker Compose</li>
                         <li>Eureka</li><li>OpenFeign</li>
-                        <li>MySQL</li>
+                        <li>Resilience4j</li><li>MySQL 8</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Proyecto 2 -->
             <div class="project-card reverse reveal">
+                <div class="project-img">
+                    <div class="project-img-inner">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-overline">Proyecto final · Certified Tech Developer</p>
+                    <div class="project-title-row">
+                        <h3 class="project-title">DH Booking Reservas</h3>
+                        <a href="https://github.com/Mondati/DH-Booking-Reservas" target="_blank" title="GitHub" class="project-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-desc">
+                        Plataforma de reservas gastronómicas que resuelve el problema de gestionar disponibilidad:
+                        un usuario no puede reservar un horario que ya está ocupado.
+                        La validación de <strong>solapamiento de fechas</strong> se implementó con una query nativa SQL
+                        que detecta conflictos directamente en base de datos, evitando colisiones en carga concurrente.
+                        El acceso está protegido con Spring Security y dos roles diferenciados (ADMIN / USER),
+                        con contraseñas encriptadas con BCrypt.
+                    </div>
+                    <ul class="project-tech">
+                        <li>Spring Security</li><li>BCrypt</li>
+                        <li>MySQL 8</li><li>Query nativa SQL</li><li>CORS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card reveal">
                 <div class="project-img">
                     <div class="project-img-inner">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -287,40 +318,16 @@
                         </a>
                     </div>
                     <div class="project-desc">
-                        API REST para gestión de clínica odontológica con <strong>Spring Security</strong>
-                        y roles diferenciados (ADMIN / USER). Incluye gestión de pacientes, odontólogos
-                        y turnos, documentación con Swagger UI, y frontend propio en HTML/CSS/JS.
+                        API REST para digitalizar la gestión de una clínica: registro de pacientes, altas y bajas de odontólogos,
+                        y asignación de turnos con validaciones de integridad.
+                        El acceso está controlado con <strong>Spring Security</strong> y dos roles (ADMIN / USER):
+                        solo el administrador puede modificar datos sensibles.
+                        Incluye documentación interactiva con <strong>Swagger UI</strong> y un frontend en HTML/CSS/JS
+                        que consume la API directamente.
                     </div>
                     <ul class="project-tech">
-                        <li>Spring Security</li><li>BCrypt</li>
-                        <li>H2</li><li>Swagger</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Proyecto 3 -->
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto grupal · Digital House</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">DH Booking Reservas</h3>
-                        <a href="https://github.com/Mondati/DH-Booking-Reservas" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        Sistema de reservas gastronómicas estilo Booking, desarrollado en equipo como
-                        <strong>proyecto final del CTD de Digital House</strong>. Incluye registro/login
-                        con roles, validación de fechas solapadas mediante queries nativas y CORS.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Security</li><li>MySQL</li>
-                        <li>CORS</li><li>JPA Nativo</li>
+                        <li>Spring Boot 2.7</li><li>Spring Security</li>
+                        <li>BCrypt</li><li>H2</li><li>Swagger / OpenAPI</li>
                     </ul>
                 </div>
             </div>
@@ -329,52 +336,26 @@
             <div class="project-card reverse reveal">
                 <div class="project-img">
                     <div class="project-img-inner">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto destacado</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">API Gestión de Ventas</h3>
-                        <a href="https://github.com/Mondati/API-Gestion-Clientes-Productos-Ventas" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        API REST para gestión de clientes, productos y ventas con
-                        <strong>consultas de negocio</strong> avanzadas: monto total por día,
-                        venta con mayor importe, listado de productos por venta.
-                        Documentada con Swagger UI.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Boot 3</li><li>MySQL</li>
-                        <li>Swagger</li><li>JPA</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Proyecto 5 -->
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
                         <i class="fa-solid fa-gamepad"></i>
                     </div>
                 </div>
                 <div class="project-info">
-                    <p class="project-overline">Proyecto universitario</p>
+                    <p class="project-overline">Proyecto universitario · UDA</p>
                     <div class="project-title-row">
-                        <h3 class="project-title">Blackjack Java</h3>
+                        <h3 class="project-title">Blackjack</h3>
                         <a href="https://github.com/Mondati/Blackjack" target="_blank" title="GitHub" class="project-github">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                     <div class="project-desc">
-                        Juego de Blackjack de escritorio con interfaz gráfica en <strong>Java Swing</strong>,
-                        arquitectura MVC, caché de imágenes con SwingWorker, historial de partidas
-                        persistido en disco y suite de tests con JUnit 5.
+                        Juego de Blackjack de escritorio desarrollado como proyecto final de la materia Laboratorio 2
+                        en la Universidad del Aconcagua. El desafío principal era separar correctamente la lógica del juego
+                        de la interfaz gráfica. Apliqué el patrón <strong>MVC</strong> con Java Swing,
+                        implementé un dealer con reglas estándar (stand-on-17), caché de imágenes para optimizar la carga de recursos
+                        y persistencia del historial de partidas en disco. Incluye suite de tests con JUnit 5.
                     </div>
                     <ul class="project-tech">
-                        <li>Java Swing</li><li>MVC</li><li>JUnit 5</li><li>Maven</li>
+                        <li>Java 21</li><li>Java Swing</li><li>MVC</li><li>JUnit 5</li><li>Maven</li>
                     </ul>
                 </div>
             </div>
