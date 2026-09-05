@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/android-chrome-192x192.png">
+    <link rel="icon" href="./assets/icons/favicon-mondati.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="./assets/icons/favicon-mondati.svg" type="image/svg+xml" sizes="any">
     <title>Agustín Mondati — Backend Developer</title>
 </head>
 
 <body>
+    <a class="skip-link" href="#hero">Saltar al contenido</a>
 
     <!-- PANEL DE TEMAS -->
-    <div class="theme-panel" id="themePanel">
+    <div class="theme-panel" id="themePanel" role="region" aria-label="Elegir tema" hidden>
         <ul class="theme-list">
             <li class="theme-item active" data-theme="marino">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#0a192f"></span>
-                        <span class="swatch" style="background:#64ffda"></span>
-                        <span class="swatch" style="background:#00b4d8"></span>
+                        <span class="swatch" style="background:#191d21"></span>
+                        <span class="swatch" style="background:#a5bbce"></span>
+                        <span class="swatch" style="background:#f2efe9"></span>
                     </span>
                     Marino
                 </button>
@@ -31,9 +32,9 @@
             <li class="theme-item" data-theme="dark">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#0d1117"></span>
-                        <span class="swatch" style="background:#58a6ff"></span>
-                        <span class="swatch" style="background:#3fb950"></span>
+                        <span class="swatch" style="background:#131517"></span>
+                        <span class="swatch" style="background:#adbcc8"></span>
+                        <span class="swatch" style="background:#f1efea"></span>
                     </span>
                     Oscuro
                 </button>
@@ -41,9 +42,9 @@
             <li class="theme-item" data-theme="bowser">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#16161a"></span>
-                        <span class="swatch" style="background:#7f5af0"></span>
-                        <span class="swatch" style="background:#2cb67d"></span>
+                        <span class="swatch" style="background:#1c1c25"></span>
+                        <span class="swatch" style="background:#b8b6d4"></span>
+                        <span class="swatch" style="background:#f2eef1"></span>
                     </span>
                     Noche
                 </button>
@@ -51,9 +52,9 @@
             <li class="theme-item" data-theme="choco">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#3d2b1f"></span>
-                        <span class="swatch" style="background:#ffab40"></span>
-                        <span class="swatch" style="background:#e91e8c"></span>
+                        <span class="swatch" style="background:#29221f"></span>
+                        <span class="swatch" style="background:#d5b89d"></span>
+                        <span class="swatch" style="background:#f5eee6"></span>
                     </span>
                     Choco
                 </button>
@@ -61,9 +62,9 @@
             <li class="theme-item" data-theme="light">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#fef6e4"></span>
-                        <span class="swatch" style="background:#f582ae"></span>
-                        <span class="swatch" style="background:#006e8a"></span>
+                        <span class="swatch" style="background:#f4eee5"></span>
+                        <span class="swatch" style="background:#744b65"></span>
+                        <span class="swatch" style="background:#29252b"></span>
                     </span>
                     Pastel
                 </button>
@@ -71,9 +72,9 @@
             <li class="theme-item" data-theme="default">
                 <button class="theme-btn">
                     <span class="palette">
-                        <span class="swatch" style="background:#ffffff"></span>
-                        <span class="swatch" style="background:#e63946"></span>
-                        <span class="swatch" style="background:#457b9d"></span>
+                        <span class="swatch" style="background:#fafaf7"></span>
+                        <span class="swatch" style="background:#435f76"></span>
+                        <span class="swatch" style="background:#24282d"></span>
                     </span>
                     Clásico
                 </button>
@@ -82,8 +83,8 @@
     </div>
 
     <!-- NAVBAR -->
-    <nav id="navbar">
-        <a href="#hero" class="nav-logo">&lt;AM /&gt;</a>
+    <nav id="navbar" aria-label="Navegación principal">
+        <a href="#hero" class="nav-logo" aria-label="Agustín Mondati, inicio">&lt;AM /&gt;</a>
         <ul class="nav-links">
             <li><a href="#sobre-mi"><span class="num">01.</span>Sobre mí</a></li>
             <li><a href="#formacion"><span class="num">02.</span>Formación</a></li>
@@ -92,19 +93,19 @@
             <li><a href="#contacto"><span class="num">05.</span>Contacto</a></li>
         </ul>
         <div class="mobile-controls">
-            <button class="theme-toggle" id="themeToggleMobile" title="Cambiar tema">
-                <i class="fa-solid fa-palette"></i>
+            <button class="theme-toggle" id="themeToggleMobile" title="Cambiar tema" aria-label="Cambiar tema" aria-controls="themePanel" aria-expanded="false">
+                <i class="fa-solid fa-palette" aria-hidden="true"></i>
             </button>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </nav>
 
     <!-- MOBILE NAV -->
-    <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navegación móvil" hidden>
         <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
         <ul class="mobile-nav-links">
             <li><a href="#sobre-mi"><span class="num">01.</span>Sobre mí</a></li>
@@ -115,38 +116,38 @@
         </ul>
     </div>
 
-    <!-- SOCIAL SIDEBAR -->
-    <div class="social-sidebar">
-        <a href="https://github.com/Mondati" target="_blank" rel="noreferrer" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noreferrer" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+    <!-- BARRAS LATERALES: solo cuando hay espacio suficiente -->
+    <div class="social-sidebar" role="group" aria-label="Redes sociales">
+        <a href="https://github.com/Mondati" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
     </div>
-
-    <!-- EMAIL SIDEBAR -->
     <div class="email-sidebar">
         <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
     </div>
 
     <!-- HERO -->
-    <section class="hero" id="hero">
+    <main>
+    <section class="hero" id="hero" aria-labelledby="hero-title" tabindex="-1">
+        <div class="hero-particles" aria-hidden="true"></div>
+        <button class="particles-toggle" type="button" hidden>Pausar fondo</button>
+        <div class="hero-copy">
+        <p class="hero-eyebrow"><span class="num">00 /</span> Backend developer</p>
         <p class="hero-greeting">Hola, mi nombre es</p>
-        <h1>Agustín Mondati.</h1>
-        <h2>Construyo cosas para el backend.</h2>
+        <h1 id="hero-title" aria-label="Agustín Mondati"><span class="name-mask" aria-hidden="true"><span class="name-word">Agustín</span></span> <span class="name-mask" aria-hidden="true"><span class="name-word">Mondati<span class="hero-period">.</span></span></span></h1>
+        <h2>Desarrollo APIs y sistemas backend con Java y Spring Boot.</h2>
         <p class="hero-desc">
-            Soy desarrollador Backend especializado en <strong>Java + Spring Boot</strong>,
-            apasionado por construir APIs REST robustas y sistemas escalables.
-            Actualmente cursando <strong>Lic. en Informática y Desarrollo de Software</strong>
+            Me enfoco en soluciones robustas y escalables. Curso la
+            <strong>Lic. en Informática y Desarrollo de Software</strong>
             en la Universidad del Aconcagua.
         </p>
         <div class="hero-btns">
-            <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
-            <a href="mailto:agustinmondati@gmail.com" class="btn-secondary">Contactame</a>
+            <a href="#proyectos" class="btn-primary">Ver mis proyectos <span class="btn-arrow" aria-hidden="true">↗</span></a>
+            <a href="mailto:agustinmondati@gmail.com" class="btn-secondary">Contactame <span class="btn-arrow" aria-hidden="true">→</span></a>
+        </div>
+        </div>
+        <div class="hero-portrait">
+            <img src="./assets/images/ChatGPT_Image_5_sept_2026__12_15_24_a.m.-removebg-preview.png" width="448" height="556" alt="Retrato de Agustín Mondati" decoding="async">
         </div>
     </section>
 
@@ -155,40 +156,21 @@
         <h2 class="section-title reveal"><span class="num">01.</span> Sobre mí</h2>
         <div class="about-grid">
             <div class="about-text reveal">
-                <p>
-                    Soy un desarrollador Backend de Mendoza, Argentina, con foco en el ecosistema
-                    <strong style="color:var(--primary)">Java + Spring</strong>. Me apasiona diseñar
-                    sistemas bien estructurados, desde APIs REST monolíticas hasta arquitecturas de
-                    microservicios con Spring Cloud.
-                </p>
-                <p>
-                    Mi formación combina la carrera universitaria en la
-                    <strong style="color:var(--primary)">Universidad del Aconcagua</strong> con el programa
-                    <strong style="color:var(--primary)">Certified Tech Developer de Digital House</strong>
-                    (avalado por Mercado Libre y Globant, 1.568 hs) y el programa backend de
-                    <strong style="color:var(--primary)">Oracle ONE + Alura</strong>.
-                </p>
-                <p>Algunas tecnologías con las que trabajo actualmente:</p>
-                <ul class="about-skills">
-                    <li>Java 17</li>
-                    <li>Spring Boot</li>
-                    <li>Spring Security</li>
-                    <li>Spring Cloud</li>
-                    <li>Docker</li>
-                    <li>MySQL</li>
-                    <li>JPA / Hibernate</li>
-                    <li>Git & GitHub</li>
-                </ul>
+                <p>Mi recorrido combina formación universitaria con programas de desarrollo de software.
+                    Completé <strong>Certified Tech Developer de Digital House</strong>, avalado por
+                    Mercado Libre y Globant, y el programa <strong>Oracle ONE + Alura</strong>.
+                    Esa formación incluye trabajo colaborativo, metodologías ágiles y proyectos como
+                    un sistema de reservas gastronómicas desarrollado en equipo.</p>
+                <p>Me interesa diseñar sistemas bien estructurados, desde aplicaciones monolíticas
+                    hasta arquitecturas de microservicios. En mis proyectos trabajo con seguridad,
+                    persistencia de datos y documentación de APIs; también exploro la organización
+                    del código mediante MVC y las pruebas automatizadas. Busco mis primeras
+                    oportunidades laborales para seguir desarrollándome en este camino.</p>
             </div>
-            <div class="about-img-wrap reveal">
-                <div class="about-img-box">
-                    <div class="about-img-placeholder">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <span>Agustín Mondati</span>
-                        <!-- Reemplazar con: <img src="./assets/images/tu-foto.jpg" alt="Agustín Mondati"> -->
-                    </div>
-                </div>
-            </div>
+            <dl class="about-facts">
+                <div><dt>Ubicación</dt><dd>Mendoza, Argentina</dd></div>
+                <div><dt>Formación actual</dt><dd>Lic. en Informática y Desarrollo de Software<br>Universidad del Aconcagua</dd></div>
+            </dl>
         </div>
     </section>
 
@@ -235,148 +217,73 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos">
-        <h2 class="section-title reveal"><span class="num">03.</span> Proyectos</h2>
-        <div class="projects-list">
+    <section id="proyectos" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title"><span class="num">03.</span> Proyectos</h2>
+        <div class="projects-grid">
+            <article class="project-card" aria-labelledby="sharkware-title">
+                <p class="project-overline">Ecommerce · Proyecto grupal</p>
+                <h3 class="project-title" id="sharkware-title">SharkWare Gaming</h3>
+                <p class="project-desc">Proyecto grupal orientado a ayudar a compradores con poca experiencia técnica a elegir hardware y completar su compra.</p>
+                <p class="project-evidence">La presentación muestra un armador de PCs con IA, un asistente sobre el catálogo y herramientas de administración.</p>
+                <ul class="project-tech" aria-label="Tecnologías de SharkWare Gaming">
+                    <li>React</li><li>Java</li><li>Spring Boot</li><li>MySQL</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://mondati.github.io/sharkware-presentacion/" target="_blank" rel="noopener noreferrer" aria-label="Ver presentación de SharkWare Gaming (nueva pestaña)">Ver presentación <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-          <!-- Proyecto 1 -->
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
+            <article class="project-card" aria-labelledby="tienda-title">
+                <p class="project-overline">API REST · Proyecto de aprendizaje</p>
+                <h3 class="project-title" id="tienda-title">API Tienda Electrónica</h3>
+                <p class="project-desc">Backend para gestionar productos, carritos y ventas de una tienda de electrodomésticos, organizado en microservicios.</p>
+                <p class="project-evidence">Incluye acceso mediante API Gateway, descubrimiento con Eureka, comunicación entre servicios con OpenFeign y despliegue con Docker Compose.</p>
+                <ul class="project-tech" aria-label="Tecnologías de API Tienda Electrónica">
+                    <li>Spring Boot</li><li>Spring Cloud</li><li>Docker</li><li>MySQL</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Mondati/API-Tienda-Electronica" target="_blank" rel="noopener noreferrer" aria-label="Ver código de API Tienda Electrónica en GitHub (nueva pestaña)">Ver código <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto destacado</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">API Tienda Electrónica</h3>
-                        <a href="https://github.com/Mondati/API-Tienda-Electronica" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        API REST con <strong>arquitectura de microservicios</strong> completa para
-                        una tienda de electrodomésticos. Incluye API Gateway, Eureka Server,
-                        Config Server centralizado, comunicación entre servicios con OpenFeign,
-                        Circuit Breaker con Resilience4j y orquestación con Docker Compose.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Cloud</li><li>Docker</li>
-                        <li>Eureka</li><li>OpenFeign</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-            </div>
+            </article>
 
-            <!-- Proyecto 2 -->
-            <div class="project-card reverse reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
+            <article class="project-card" aria-labelledby="booking-title">
+                <p class="project-overline">Proyecto grupal · Digital House</p>
+                <h3 class="project-title" id="booking-title">DH Booking Reservas</h3>
+                <p class="project-desc">Proyecto grupal para gestionar reservas gastronómicas, con registro de usuarios, acceso por roles y detección de fechas superpuestas.</p>
+                <p class="project-evidence">Implementa persistencia de reservas y consultas SQL nativas para comprobar solapamientos.</p>
+                <ul class="project-tech" aria-label="Tecnologías de DH Booking Reservas">
+                    <li>Java</li><li>Spring Boot</li><li>Spring Security</li><li>MySQL</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Mondati/DH-Booking-Reservas" target="_blank" rel="noopener noreferrer" aria-label="Ver código de DH Booking Reservas en GitHub (nueva pestaña)">Ver código <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto destacado</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">API Clínica Odontológica</h3>
-                        <a href="https://github.com/Mondati/Clinica-Odontologica" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        API REST para gestión de clínica odontológica con <strong>Spring Security</strong>
-                        y roles diferenciados (ADMIN / USER). Incluye gestión de pacientes, odontólogos
-                        y turnos, documentación con Swagger UI, y frontend propio en HTML/CSS/JS.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Security</li><li>BCrypt</li>
-                        <li>H2</li><li>Swagger</li>
-                    </ul>
-                </div>
-            </div>
+            </article>
 
-            <!-- Proyecto 3 -->
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
+            <article class="project-card" aria-labelledby="blackjack-title">
+                <p class="project-overline">Juego de escritorio · Universitario</p>
+                <h3 class="project-title" id="blackjack-title">Blackjack</h3>
+                <p class="project-desc">Juego de Blackjack de escritorio que permite jugar partidas y conservar su historial en disco.</p>
+                <p class="project-evidence">Organiza la lógica y la interfaz mediante MVC e incorpora carga y caché de imágenes con SwingWorker y pruebas unitarias con JUnit 5.</p>
+                <ul class="project-tech" aria-label="Tecnologías de Blackjack">
+                    <li>Java</li><li>Swing</li><li>JUnit 5</li><li>Maven</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Mondati/Blackjack" target="_blank" rel="noopener noreferrer" aria-label="Ver código de Blackjack en GitHub (nueva pestaña)">Ver código <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto grupal · Digital House</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">DH Booking Reservas</h3>
-                        <a href="https://github.com/Mondati/DH-Booking-Reservas" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        Sistema de reservas gastronómicas estilo Booking, desarrollado en equipo como
-                        <strong>proyecto final del CTD de Digital House</strong>. Incluye registro/login
-                        con roles, validación de fechas solapadas mediante queries nativas y CORS.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Security</li><li>MySQL</li>
-                        <li>CORS</li><li>JPA Nativo</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Proyecto 4 -->
-            <div class="project-card reverse reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto destacado</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">API Gestión de Ventas</h3>
-                        <a href="https://github.com/Mondati/API-Gestion-Clientes-Productos-Ventas" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        API REST para gestión de clientes, productos y ventas con
-                        <strong>consultas de negocio</strong> avanzadas: monto total por día,
-                        venta con mayor importe, listado de productos por venta.
-                        Documentada con Swagger UI.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Spring Boot 3</li><li>MySQL</li>
-                        <li>Swagger</li><li>JPA</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Proyecto 5 -->
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <div class="project-img-inner">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <p class="project-overline">Proyecto universitario</p>
-                    <div class="project-title-row">
-                        <h3 class="project-title">Blackjack Java</h3>
-                        <a href="https://github.com/Mondati/Blackjack" target="_blank" title="GitHub" class="project-github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-desc">
-                        Juego de Blackjack de escritorio con interfaz gráfica en <strong>Java Swing</strong>,
-                        arquitectura MVC, caché de imágenes con SwingWorker, historial de partidas
-                        persistido en disco y suite de tests con JUnit 5.
-                    </div>
-                    <ul class="project-tech">
-                        <li>Java Swing</li><li>MVC</li><li>JUnit 5</li><li>Maven</li>
-                    </ul>
-                </div>
-            </div>
-
+            </article>
         </div>
+
+        <article class="published-project" aria-labelledby="gestoria-title">
+            <img class="published-preview" src="./assets/images/gestoria-automotor.png" width="1200" height="750" alt="Captura del sitio Gestoría del Automotor" loading="lazy" decoding="async">
+            <div class="published-info">
+                <p class="project-overline">Sitio publicado</p>
+                <h3 class="project-title" id="gestoria-title">Gestoría del Automotor</h3>
+                <p class="project-desc">Sitio informativo para conocer los servicios de gestoría y trámites del automotor disponibles en Tupungato, Mendoza.</p>
+                <div class="project-links">
+                    <a href="https://gestoriaautomotor.com.ar/" target="_blank" rel="noopener noreferrer" aria-label="Visitar sitio de Gestoría del Automotor (nueva pestaña)">Visitar sitio <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </article>
     </section>
 
     <!-- TECNOLOGÍAS -->
@@ -443,16 +350,21 @@
         </div>
     </section>
 
+    </main>
     <!-- FOOTER -->
     <footer>
         <p>Pensado y construido por <a href="https://github.com/Mondati">Agustín Mondati</a></p>
-        <p style="margin-top:8px; font-size:0.7rem">
-            <a href="https://github.com/Mondati" style="margin:0 8px"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" style="margin:0 8px"><i class="fa-brands fa-linkedin-in"></i></a>
-        </p>
+        <div class="footer-links" role="group" aria-label="Redes y email">
+            <a href="https://github.com/Mondati" target="_blank" rel="noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/sergio-agustin-mondati/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+            <a href="https://www.instagram.com/agustinmondati/" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="mailto:agustinmondati@gmail.com">agustinmondati@gmail.com</a>
+        </div>
     </footer>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/projects.js"></script>
+    <script type="module" src="./assets/js/hero-particles.js"></script>
 
 </body>
 </html>
