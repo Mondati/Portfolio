@@ -201,6 +201,31 @@ section:not(.hero) { border-top: 1px solid var(--border); }
 .tech-item i { font-size: 1.8rem; color: var(--primary); }
 .tech-item span { font-size: 0.8125rem; color: var(--text2); text-align: center; }
 .tech-section-title { font: 400 0.75rem/1.6 var(--fira); color: var(--primary); margin: 32px 0 16px; text-transform: uppercase; letter-spacing: 1px; }
+.tech-track, .tech-group { display: contents; }
+.tech-group[aria-hidden="true"] { display: none; }
+@media (min-width: 851px) and (prefers-reduced-motion: no-preference) {
+    .tech-grid.is-scrolling {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+        mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+    }
+    .tech-grid.is-scrolling .tech-track {
+        display: flex;
+        width: max-content;
+        gap: var(--space-2);
+        animation: tech-drift var(--tech-duration) linear infinite;
+        animation-direction: var(--tech-direction, normal);
+    }
+    .tech-grid.is-scrolling .tech-group { display: flex; flex: none; gap: var(--space-2); }
+    .tech-grid.is-scrolling .tech-item { flex: 0 0 140px; width: 140px; }
+    .tech-grid.is-scrolling:is(:hover, :focus-within) .tech-track { animation-play-state: paused; }
+}
+@keyframes tech-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-1 * var(--tech-distance))); }
+}
 .contact-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .contact-overline { font: 400 0.85rem/1.6 var(--fira); color: var(--primary); margin-bottom: 16px; }
 .contact-title { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.05em; font-weight: 600; margin-bottom: 24px; }

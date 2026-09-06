@@ -111,6 +111,61 @@ document.addEventListener('keydown', event => {
     }
 });
 
+// Mejora progresiva: CSS mueve la pista; JS solo mide cuando cambia el tamaño.
+(() => {
+    if (!('ResizeObserver' in window)) return;
+    const motion = matchMedia('(prefers-reduced-motion: no-preference)');
+    const rows = [...document.querySelectorAll('#tecnologias .tech-grid')].map((row, index) => {
+        const track = document.createElement('div');
+        const group = document.createElement('div');
+        track.className = 'tech-track';
+        group.className = 'tech-group';
+        group.append(...row.children);
+        track.append(group);
+        row.append(track);
+        row.style.setProperty('--tech-direction', index % 2 ? 'reverse' : 'normal');
+        return { row, track, group, distance: 0 };
+    });
+
+    function refresh() {
+        rows.forEach(state => {
+            const { row, track, group } = state;
+            const gap = parseFloat(getComputedStyle(row).gap) || 0;
+            const distance = group.children.length * (140 + gap);
+            const scrolling = motion.matches && !mobileLayout.matches &&
+                distance - gap > row.clientWidth;
+            if (!scrolling) {
+                row.classList.remove('is-scrolling');
+                track.querySelector('[aria-hidden="true"]')?.remove();
+                state.distance = 0;
+                return;
+            }
+            // No modificar la pista si su geometría no cambió (incluido al cambiar tema).
+            if (state.distance === distance) return;
+            if (track.children.length === 1) {
+                const copy = group.cloneNode(true);
+                copy.setAttribute('aria-hidden', 'true');
+                copy.inert = true;
+                copy.querySelectorAll('[id]').forEach(element => element.removeAttribute('id'));
+                copy.querySelectorAll('a, button, input, select, textarea, [tabindex], [contenteditable]')
+                    .forEach(element => element.setAttribute('tabindex', '-1'));
+                track.append(copy);
+            }
+            row.style.setProperty('--tech-distance', `${distance}px`);
+            row.style.setProperty('--tech-duration', `${distance / 20}s`);
+            row.classList.add('is-scrolling');
+            state.distance = distance;
+        });
+    }
+
+    const observer = new ResizeObserver(refresh);
+    rows.forEach(({ row }) => observer.observe(row));
+    motion.addEventListener('change', refresh);
+    mobileLayout.addEventListener('change', refresh);
+    document.fonts.ready.then(refresh);
+    refresh();
+})();
+
 // Una sola secuencia por carga. El CSS base siempre muestra el estado final.
 const heroMotion = (() => {
     const hero = document.getElementById('hero');
