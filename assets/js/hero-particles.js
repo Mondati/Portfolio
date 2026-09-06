@@ -1,6 +1,6 @@
 // React Bits Particles, adapted to native ESM. Attribution/licenses: ../vendor/README.md.
 export const PARTICLES_CONFIG = Object.freeze({
-    particleCount: 80, mobileParticleCount: 35, particleSpread: 10,
+    particleCount: 160, mobileParticleCount: 70, particleSpread: 10,
     speed: 0.04, particleBaseSize: 85, sizeRandomness: 1, cameraDistance: 20,
     alphaParticles: true, disableRotation: true, moveParticlesOnHover: false,
     pixelRatio: 1, opacity: 0.95, behindTextOpacity: 0.3, depthScale: 0.35,
@@ -49,28 +49,29 @@ void main() {
 }`;
 
 function createParticles() {
-    const host = document.querySelector('.hero-particles');
+    const host = document.querySelector('.page-particles');
     if (!host || new URLSearchParams(location.search).get('particles') === 'off' ||
-        !window.IntersectionObserver || !window.ResizeObserver) return null;
-    const hero = host.closest('#hero');
-    const copy = hero.querySelector('.hero-copy');
-    const button = hero.querySelector('.particles-toggle');
+        !window.ResizeObserver) return null;
+    const content = document.querySelector('#sobre-mi');
+    const hero = document.getElementById('hero');
+    const button = document.querySelector('.particles-toggle');
     const menu = document.getElementById('mobileNav');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
     const data = matchMedia('(prefers-reduced-data: reduce)');
     const mobile = matchMedia('(max-width: 850px)');
     const config = PARTICLES_CONFIG;
     let renderer, gl, geometry, program, mesh, camera, canvas;
-    let visible = false, paused = false, destroyed = false, loading = false, pageHidden = false;
+    let paused = false, destroyed = false, loading = false, pageHidden = false;
     let frame = 0, lastTime = null, elapsed = 0, lastRender = null, width = 0, height = 0;
     let renderedFrames = 0;
+    let heroBottom = 0;
     const cleanups = [];
     const listen = (target, event, callback) => {
         target?.addEventListener(event, callback);
         cleanups.push(() => target?.removeEventListener(event, callback));
     };
     const savesData = () => data.matches || Boolean(navigator.connection?.saveData);
-    const allowed = () => !destroyed && !pageHidden && visible && !document.hidden &&
+    const allowed = () => !destroyed && !pageHidden && !document.hidden &&
         !motion.matches && !savesData() && !paused && (!menu || menu.hidden);
 
     function stop() {
@@ -85,6 +86,9 @@ function createParticles() {
         lastTime = time;
         if (lastRender === null || time - lastRender >= 1000 / config.maxFPS - 0.5) {
             program.uniforms.uTime.value = elapsed;
+            // Keep the hero bright; dim the content column only below it.
+            program.uniforms.uTextBounds.value[1] = Math.max(-20,
+                Math.min(height + 20, heroBottom - window.scrollY)) * config.pixelRatio;
             renderer.render({ scene: mesh, camera, frustumCull: false, sort: false });
             renderedFrames++;
             lastRender = time;
@@ -104,7 +108,8 @@ function createParticles() {
         if (!renderer || destroyed) return;
         // Layout is read only on resize, never in the render loop.
         const bounds = host.getBoundingClientRect();
-        const text = copy.getBoundingClientRect();
+        const text = content.getBoundingClientRect();
+        heroBottom = hero.getBoundingClientRect().bottom + window.scrollY;
         width = bounds.width; height = bounds.height;
         if (!width || !height) { stop(); return; }
         renderer.setSize(width, height);
@@ -113,8 +118,9 @@ function createParticles() {
         program.uniforms.uPlane.value = [halfHeight * width / height / config.particleSpread,
             halfHeight / config.particleSpread];
         program.uniforms.uResolution.value = [canvas.width, canvas.height];
-        program.uniforms.uTextBounds.value = [text.left - bounds.left, text.top - bounds.top,
-            text.right - bounds.left, text.bottom - bounds.top].map(v => v * config.pixelRatio);
+        // Horizontal content bounds are cached; scrolling only updates the top edge.
+        program.uniforms.uTextBounds.value = [text.left - bounds.left, -20,
+            text.right - bounds.left, height + 20].map(v => v * config.pixelRatio);
         geometry.setDrawRange(0, mobile.matches ? config.mobileParticleCount : config.particleCount);
         sync();
     }
@@ -185,10 +191,6 @@ function createParticles() {
             destroy();
         } finally { loading = false; }
     }
-    const intersection = new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        sync();
-    });
     const sizing = new ResizeObserver(resize);
     const changes = new MutationObserver(entries => {
         if (entries.some(entry => entry.attributeName === 'data-theme')) colors();
@@ -197,7 +199,7 @@ function createParticles() {
     function destroy(contextLost = false) {
         if (destroyed) return;
         destroyed = true;
-        stop(); intersection.disconnect(); sizing.disconnect(); changes.disconnect();
+        stop(); sizing.disconnect(); changes.disconnect();
         cleanups.forEach(cleanup => cleanup());
         button.hidden = true;
         canvas?.remove();
@@ -211,8 +213,7 @@ function createParticles() {
         }
         renderer = gl = geometry = program = mesh = camera = canvas = null;
     }
-    intersection.observe(hero);
-    sizing.observe(host); sizing.observe(copy);
+    sizing.observe(host); sizing.observe(content); sizing.observe(hero);
     changes.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     if (menu) changes.observe(menu, { attributes: true, attributeFilter: ['hidden'] });
     listen(button, 'click', () => { paused = !paused; sync(); });
@@ -221,7 +222,8 @@ function createParticles() {
     listen(document, 'visibilitychange', sync);
     listen(window, 'pagehide', event => { pageHidden = true; if (event.persisted) stop(); else destroy(); });
     listen(window, 'pageshow', () => { pageHidden = false; sync(); });
-    return { destroy, getState: () => ({ running: Boolean(frame), paused, visible, destroyed,
+    sync();
+    return { destroy, getState: () => ({ running: Boolean(frame), paused, visible: !pageHidden && !document.hidden, destroyed,
         renderedFrames, elapsed, count: geometry?.drawRange.count ?? 0 }) };
 }
 

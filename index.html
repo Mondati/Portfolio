@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    <div class="page-particles" aria-hidden="true"></div>
+    <button class="particles-toggle" type="button" hidden>Pausar fondo</button>
     <a class="skip-link" href="#hero">Saltar al contenido</a>
 
     <!-- PANEL DE TEMAS -->
@@ -129,8 +131,6 @@
     <!-- HERO -->
     <main>
     <section class="hero" id="hero" aria-labelledby="hero-title" tabindex="-1">
-        <div class="hero-particles" aria-hidden="true"></div>
-        <button class="particles-toggle" type="button" hidden>Pausar fondo</button>
         <div class="hero-copy">
         <p class="hero-eyebrow"><span class="num">00 /</span> Backend developer</p>
         <p class="hero-greeting">Hola, mi nombre es</p>
@@ -288,49 +288,48 @@
 
     <!-- TECNOLOGÍAS -->
     <section id="tecnologias">
-        <h2 class="section-title reveal"><span class="num">04.</span> Tecnologías</h2>
+        <h2 class="section-title"><span class="num">04.</span> Tecnologías</h2>
 
-        <p class="tech-section-title reveal">Backend</p>
-        <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-brands fa-java"></i><span>Java 17</span></div>
-            <div class="tech-item"><i class="fa-solid fa-leaf"></i><span>Spring Boot</span></div>
-            <div class="tech-item"><i class="fa-solid fa-shield-halved"></i><span>Spring Security</span></div>
-            <div class="tech-item"><i class="fa-solid fa-cloud"></i><span>Spring Cloud</span></div>
-            <div class="tech-item"><i class="fa-solid fa-database"></i><span>Spring Data JPA</span></div>
-            <div class="tech-item"><i class="fa-solid fa-layer-group"></i><span>Hibernate</span></div>
+        <p class="tech-section-title">Backend</p>
+        <div class="tech-grid">
+            <div class="tech-item"><i class="fa-brands fa-java" aria-hidden="true"></i><span>Java 17</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#springboot"></use></svg><span>Spring Boot</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#springsecurity"></use></svg><span>Spring Security</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#spring"></use></svg><span>Spring Cloud</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#spring"></use></svg><span>Spring Data JPA</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#hibernate"></use></svg><span>Hibernate</span></div>
+            <div class="tech-item"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Microservicios</span></div>
         </div>
 
-        <p class="tech-section-title reveal">Base de datos & DevOps</p>
-        <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
-            <div class="tech-item"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
-            <div class="tech-item"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-            <div class="tech-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
-            <div class="tech-item"><i class="fa-solid fa-file-code"></i><span>Maven</span></div>
-            <div class="tech-item"><i class="fa-solid fa-book-open"></i><span>Swagger</span></div>
+        <p class="tech-section-title">Base de datos, DevOps y testing</p>
+        <div class="tech-grid">
+            <div class="tech-item"><svg class="tech-icon tech-icon--fine" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#mysql"></use></svg><span>MySQL</span></div>
+            <div class="tech-item"><svg class="tech-icon tech-icon--fine" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#microsoftsqlserver"></use></svg><span>SQL Server</span></div>
+            <div class="tech-item"><i class="fa-brands fa-docker" aria-hidden="true"></i><span>Docker</span></div>
+            <div class="tech-item"><i class="fa-brands fa-git-alt" aria-hidden="true"></i><span>Git</span></div>
+            <div class="tech-item"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></div>
+            <div class="tech-item"><svg class="tech-icon tech-icon--fine" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#apachemaven"></use></svg><span>Maven</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#swagger"></use></svg><span>Swagger</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#junit5"></use></svg><span>JUnit 5</span></div>
+            <div class="tech-item"><svg class="tech-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/technologies.svg#postman"></use></svg><span>Postman</span></div>
         </div>
 
-        <p class="tech-section-title reveal">Frontend & Otros</p>
-        <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-            <div class="tech-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-            <div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-            <div class="tech-item"><i class="fa-solid fa-vial"></i><span>JUnit 5</span></div>
-            <div class="tech-item"><i class="fa-solid fa-terminal"></i><span>Postman</span></div>
+        <p class="tech-section-title">Organización y colaboración</p>
+        <div class="tech-grid">
+            <div class="tech-item"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i><span>Scrum</span></div>
+            <div class="tech-item"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Agile</span></div>
+            <div class="tech-item"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i><span>RUP</span></div>
+            <div class="tech-item"><i class="fa-brands fa-trello" aria-hidden="true"></i><span>Trello</span></div>
+            <div class="tech-item"><i class="fa-solid fa-people-group" aria-hidden="true"></i><span>Trabajo en equipo</span></div>
         </div>
 
-        <p class="tech-section-title reveal">Conocimientos básicos</p>
-        <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-solid fa-c"></i><span>C</span></div>
-            <div class="tech-item"><i class="fa-solid fa-code"></i><span>C++</span></div>
-        </div>
-
-        <p class="tech-section-title reveal">Metodologías de trabajo</p>
-        <div class="tech-grid reveal">
-            <div class="tech-item"><i class="fa-solid fa-arrows-spin"></i><span>Scrum</span></div>
-            <div class="tech-item"><i class="fa-solid fa-list-check"></i><span>Agile</span></div>
-            <div class="tech-item"><i class="fa-brands fa-trello"></i><span>Trello</span></div>
-            <div class="tech-item"><i class="fa-solid fa-people-group"></i><span>Trabajo en equipo</span></div>
+        <p class="tech-section-title">Conocimientos básicos</p>
+        <div class="tech-grid">
+            <div class="tech-item"><i class="fa-brands fa-html5" aria-hidden="true"></i><span>HTML5</span></div>
+            <div class="tech-item"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i><span>CSS3</span></div>
+            <div class="tech-item"><i class="fa-brands fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+            <div class="tech-item"><svg class="tech-icon" role="img" aria-label="C" focusable="false"><use href="./assets/icons/technologies.svg#c"></use></svg></div>
+            <div class="tech-item"><svg class="tech-icon" role="img" aria-label="C++" focusable="false"><use href="./assets/icons/technologies.svg#cplusplus"></use></svg></div>
         </div>
     </section>
 
@@ -364,7 +363,7 @@
 
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/projects.js"></script>
-    <script type="module" src="./assets/js/hero-particles.js"></script>
+    <script type="module" src="./assets/js/particles-loader.js"></script>
 
 </body>
 </html>
