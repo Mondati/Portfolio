@@ -130,13 +130,14 @@ document.addEventListener('keydown', event => {
     function refresh() {
         rows.forEach(state => {
             const { row, track, group } = state;
-            const gap = parseFloat(getComputedStyle(row).gap) || 0;
-            const distance = group.children.length * (140 + gap);
+            const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+            const itemWidth = 12 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const distance = group.children.length * (itemWidth + gap);
             const scrolling = motion.matches && !mobileLayout.matches &&
                 distance - gap > row.clientWidth;
             if (!scrolling) {
                 row.classList.remove('is-scrolling');
-                track.querySelector('[aria-hidden="true"]')?.remove();
+                track.children[1]?.remove();
                 state.distance = 0;
                 return;
             }
